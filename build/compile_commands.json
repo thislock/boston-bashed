@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/lochlan/vscode/c++/boston_bashed/build",
+  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/main.cpp.o -c /home/lochlan/vscode/c++/boston_bashed/main.cpp",
+  "file": "/home/lochlan/vscode/c++/boston_bashed/main.cpp"
+},
+{
+  "directory": "/home/lochlan/vscode/c++/boston_bashed/build",
+  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/attacks/attack.cpp.o -c /home/lochlan/vscode/c++/boston_bashed/src/attacks/attack.cpp",
+  "file": "/home/lochlan/vscode/c++/boston_bashed/src/attacks/attack.cpp"
+},
+{
+  "directory": "/home/lochlan/vscode/c++/boston_bashed/build",
+  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/game/box.cpp.o -c /home/lochlan/vscode/c++/boston_bashed/src/game/box.cpp",
+  "file": "/home/lochlan/vscode/c++/boston_bashed/src/game/box.cpp"
+},
+{
+  "directory": "/home/lochlan/vscode/c++/boston_bashed/build",
+  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/game/heart.cpp.o -c /home/lochlan/vscode/c++/boston_bashed/src/game/heart.cpp",
+  "file": "/home/lochlan/vscode/c++/boston_bashed/src/game/heart.cpp"
+},
+{
+  "directory": "/home/lochlan/vscode/c++/boston_bashed/build",
+  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/rendering/rendering.cpp.o -c /home/lochlan/vscode/c++/boston_bashed/src/rendering/rendering.cpp",
+  "file": "/home/lochlan/vscode/c++/boston_bashed/src/rendering/rendering.cpp"
+},
+{
+  "directory": "/home/lochlan/vscode/c++/boston_bashed/build",
+  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/starting-ending.cpp.o -c /home/lochlan/vscode/c++/boston_bashed/src/starting-ending.cpp",
+  "file": "/home/lochlan/vscode/c++/boston_bashed/src/starting-ending.cpp"
+}
+]
