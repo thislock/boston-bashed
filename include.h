@@ -12,6 +12,7 @@
 #include "src/game/box.h"
 #include "src/game/heart.h"
 #include "src/attacks/attack.h"
+#include "src/game/scout.h"
 
 
 #endif // INCLUDE_H

@@ -60,6 +60,10 @@ int main(int argc, char ** argv) {
 	// attacks
 	int attack = 1;
 
+	// for animatining the scout on twos - every other frame is skipped
+	bool twos = true;
+	float twosCounter = 0.f;
+
 	// master loop
   while (!quit) {
 
@@ -68,7 +72,7 @@ int main(int argc, char ** argv) {
 		}
 
 		// repeat until all events are handled
-  	    for (; SDL_PollEvent(&event);) {
+  	for (; SDL_PollEvent(&event);) {
 
 			// handles exiting event
 			if (event.type == SDL_QUIT)
@@ -116,10 +120,6 @@ int main(int argc, char ** argv) {
 			}
 		}
 
-        if (attack == 1) {
-
-        }
-
 		// clears the buffer for new things to be drawn.
 		SDL_RenderClear(mast->renderer);
 
@@ -133,66 +133,33 @@ int main(int argc, char ** argv) {
 			heart->heart_y, 
 			HEART_SIZE, HEART_SIZE
 		);
-				
-				
-				if (scout_animation_cycle == 60) {
-					scout_animation_cycle = 0;
-					torso_x = DEFAULT_TORSO_X;
-					head_x = DEFAULT_HEAD_X;
-				}
 
-				if (scout_animation_cycle == 15) {
-					std::cout << "this one\n";
-					torso_x--;
-					head_x--;
-				}
+			// draws the scout peises
+      scout_head->renderScaledTexture(
+        mast->renderer,
+        head_x, head_y,
+        SCOUT_HEAD_SIZE
+      );
 
-				if (scout_animation_cycle >= 15 && scout_animation_cycle < 17) {
-					torso_y -= 2;
-					head_y -= 2;
-				}
+			scout_legs->renderScaledTexture(
+        mast->renderer,
+        legs_x, legs_y,
+        SCOUT_LEGS_SIZE
+      );
 
-				if (scout_animation_cycle >= 17 && scout_animation_cycle < 19) {
-					torso_y += 2;
-					head_y += 2;
-				}
-
-				if (scout_animation_cycle == 30) {
-					torso_x = DEFAULT_TORSO_X;
-					head_x = DEFAULT_HEAD_X;
-				}
-				
-				if (scout_animation_cycle == 45) {
-					torso_x++;
-					head_x++;
-				}
-
-				scout_animation_cycle++;
-
-				// draws the scout peises
-        scout_head->renderScaledTexture(
-            mast->renderer,
-            head_x, head_y,
-            SCOUT_HEAD_SIZE
-        );
-
-				scout_legs->renderScaledTexture(
-            mast->renderer,
-            legs_x, legs_y,
-            SCOUT_LEGS_SIZE
-        );
-
-        scout_torso->renderScaledTexture(
-            mast->renderer,
-            torso_x, torso_y,
-            SCOUT_TORSO_SIZE
-        );
+      scout_torso->renderScaledTexture(
+        mast->renderer,
+        torso_x, torso_y,
+        SCOUT_TORSO_SIZE
+      );
 
 		// makes the backround of the screen black
 		SDL_SetRenderDrawColor(mast->renderer, 0, 0, 0, 255);
+
 		// display things in the renderer buffer.
 		SDL_RenderPresent(mast->renderer);
 
+		// for the fps
 		SDL_Delay(1000 / 30);
 
 	}
