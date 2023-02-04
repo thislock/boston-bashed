@@ -1,3 +1,9 @@
+// things that i only need in main
+// scout animation code
+#include "src/game/scout.h"
+// attacks and related functions
+#include "src/attacks/attack.h"
+
 #include "include.h"
 
 #include <SDL.h>
@@ -32,7 +38,7 @@ int main(int argc, char ** argv) {
 	
 	// images
 	// heart image
-	unique_ptr<IMAGE> heart_img(new IMAGE(mast->renderer, ASSETPATH "heart.bmp"));
+	unique_ptr<IMAGE> heart_img(new IMAGE(mast->renderer, ASSETPATH "interactable/heart.bmp"));
     // scout sprites
     unique_ptr<IMAGE> scout_head  (new IMAGE(mast->renderer, ASSETPATH "scout/head.bmp"));
     unique_ptr<IMAGE> scout_torso (new IMAGE(mast->renderer, ASSETPATH "scout/torso.bmp"));
@@ -42,16 +48,6 @@ int main(int argc, char ** argv) {
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());
 	unique_ptr<PLAYER> heart(new PLAYER());
-    
-  // variables for scout animations
-  int head_x = DEFAULT_HEAD_X, 
-      head_y = DEFAULT_HEAD_Y;
-  
-  int torso_x = DEFAULT_TORSO_X, 
-      torso_y = DEFAULT_TORSO_Y;
-  
-  int legs_x = DEFAULT_LEGS_X, 
-      legs_y = DEFAULT_LEGS_Y;
 
 	std::cout << head_x - (WIN_WIDTH / 2) << '\n' << torso_x << '\n';
 	
@@ -64,8 +60,15 @@ int main(int argc, char ** argv) {
 	bool twos = true;
 	float twosCounter = 0.f;
 
+	// makes the game run SLIGHTLY smoother by dialing down the delay between frames if there is a lag spike
+	int time_keeper_init;
+	int time_keeper_final;
+
 	// master loop
   while (!quit) {
+
+		// starts time before anything is processed
+		time_keeper_init = time(NULL) * 1000;
 
 		if (crashMain) {
 			return 1;
@@ -134,24 +137,21 @@ int main(int argc, char ** argv) {
 			HEART_SIZE, HEART_SIZE
 		);
 
-			// draws the scout peises
-      scout_head->renderScaledTexture(
-        mast->renderer,
-        head_x, head_y,
-        SCOUT_HEAD_SIZE
-      );
 
-			scout_legs->renderScaledTexture(
-        mast->renderer,
-        legs_x, legs_y,
-        SCOUT_LEGS_SIZE
-      );
+		// does what the fn says
+		animate_scout(box->boxSize);
+		// draws the scout piese's
+		render_scout(
+			mast->renderer,
+			scout_head->returnTexture(),
+			scout_torso->returnTexture(),
+			scout_legs->returnTexture()
+		);
+			
 
-      scout_torso->renderScaledTexture(
-        mast->renderer,
-        torso_x, torso_y,
-        SCOUT_TORSO_SIZE
-      );
+		// draws over the weird pixel in the corner of the heart for some reason
+		SDL_SetRenderDrawColor(mast->renderer, 0, 0, 0, 255);
+		SDL_RenderDrawPoint(mast->renderer, heart->heart_x + HEART_SIZE - 1, heart->heart_y + HEART_SIZE - 1);
 
 		// makes the backround of the screen black
 		SDL_SetRenderDrawColor(mast->renderer, 0, 0, 0, 255);
@@ -160,7 +160,8 @@ int main(int argc, char ** argv) {
 		SDL_RenderPresent(mast->renderer);
 
 		// for the fps
-		SDL_Delay(1000 / 30);
+		time_keeper_final = (time(NULL) * 1000) - time_keeper_init;
+		SDL_Delay((1000 / 30));
 
 	}
 	

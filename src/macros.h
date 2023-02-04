@@ -23,12 +23,24 @@
 // default positions of the scout body parts
 // head pos's
 #define DEFAULT_HEAD_X ((WIN_WIDTH / 2) - box->boxSize / 6) - 10
-#define DEFAULT_HEAD_Y (WIN_HEIGHT / 2) - box->boxSize
+#define DEFAULT_HEAD_Y ((WIN_HEIGHT / 2) - box->boxSize)
 // torso pos's
 #define DEFAULT_TORSO_X (WIN_WIDTH / 2) - (box->boxSize / 6) - 14
 #define DEFAULT_TORSO_Y (WIN_HEIGHT / 3) - (box->boxSize / 11) + BOX_THICCNESS
 // leg pos's
-#define DEFAULT_LEGS_X (WIN_WIDTH / 2) - (box->boxSize / 6) - 15
+#define DEFAULT_LEGS_X (WIN_WIDTH / 2) - (box->boxSize / 6)
 #define DEFAULT_LEGS_Y (WIN_HEIGHT - (WIN_HEIGHT / 2) + 5) - (box->boxSize / 4)
+
+// all of the default pos's but for scout.h
+// default positions of the scout body parts
+// head pos's
+#define DEFAULT_HEAD_X_S ((WIN_WIDTH / 2) - boxSize / 6) - 10
+#define DEFAULT_HEAD_Y_S ((WIN_HEIGHT / 2) - boxSize)
+// torso pos's
+#define DEFAULT_TORSO_X_S (WIN_WIDTH / 2) - (boxSize / 6) - 14
+#define DEFAULT_TORSO_Y_S (WIN_HEIGHT / 3) - (boxSize / 11) + BOX_THICCNESS
+// leg pos's
+#define DEFAULT_LEGS_X_S (WIN_WIDTH / 2) - (boxSize / 6) - 15
+#define DEFAULT_LEGS_Y_S (WIN_HEIGHT - (WIN_HEIGHT / 2) + 5) - (boxSize / 4)
 
 #endif // MACROS_H

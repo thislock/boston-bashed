@@ -5,7 +5,6 @@ include(CTest)
 enable_testing()
 
 add_executable(name 
-main.cpp
 
 src/attacks/attack.cpp
 
@@ -15,6 +14,8 @@ src/game/heart.cpp
 src/rendering/rendering.cpp
 
 src/starting-ending.cpp
+
+main.cpp
 
 )
 

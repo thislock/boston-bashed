@@ -57,22 +57,9 @@ include CMakeFiles/name.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/name.dir/flags.make
 
-CMakeFiles/name.dir/main.cpp.o: CMakeFiles/name.dir/flags.make
-CMakeFiles/name.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/name.dir/main.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/name.dir/main.cpp.o -c /home/loch/vs_code/c++/boston-bashed/main.cpp
-
-CMakeFiles/name.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/name.dir/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/loch/vs_code/c++/boston-bashed/main.cpp > CMakeFiles/name.dir/main.cpp.i
-
-CMakeFiles/name.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/name.dir/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/loch/vs_code/c++/boston-bashed/main.cpp -o CMakeFiles/name.dir/main.cpp.s
-
 CMakeFiles/name.dir/src/attacks/attack.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/attacks/attack.cpp.o: ../src/attacks/attack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/name.dir/src/attacks/attack.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/name.dir/src/attacks/attack.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/name.dir/src/attacks/attack.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/attacks/attack.cpp
 
 CMakeFiles/name.dir/src/attacks/attack.cpp.i: cmake_force
@@ -85,7 +72,7 @@ CMakeFiles/name.dir/src/attacks/attack.cpp.s: cmake_force
 
 CMakeFiles/name.dir/src/game/box.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/game/box.cpp.o: ../src/game/box.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/name.dir/src/game/box.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/name.dir/src/game/box.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/name.dir/src/game/box.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/game/box.cpp
 
 CMakeFiles/name.dir/src/game/box.cpp.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/name.dir/src/game/box.cpp.s: cmake_force
 
 CMakeFiles/name.dir/src/game/heart.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/game/heart.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/name.dir/src/game/heart.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/name.dir/src/game/heart.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/name.dir/src/game/heart.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/game/heart.cpp
 
 CMakeFiles/name.dir/src/game/heart.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/name.dir/src/game/heart.cpp.s: cmake_force
 
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/rendering/rendering.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/name.dir/src/rendering/rendering.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/name.dir/src/rendering/rendering.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/name.dir/src/rendering/rendering.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/rendering/rendering.cpp
 
 CMakeFiles/name.dir/src/rendering/rendering.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/name.dir/src/rendering/rendering.cpp.s: cmake_force
 
 CMakeFiles/name.dir/src/starting-ending.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/name.dir/src/starting-ending.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/name.dir/src/starting-ending.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/name.dir/src/starting-ending.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/starting-ending.cpp
 
 CMakeFiles/name.dir/src/starting-ending.cpp.i: cmake_force
@@ -135,24 +122,37 @@ CMakeFiles/name.dir/src/starting-ending.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/name.dir/src/starting-ending.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/loch/vs_code/c++/boston-bashed/src/starting-ending.cpp -o CMakeFiles/name.dir/src/starting-ending.cpp.s
 
+CMakeFiles/name.dir/main.cpp.o: CMakeFiles/name.dir/flags.make
+CMakeFiles/name.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/name.dir/main.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/name.dir/main.cpp.o -c /home/loch/vs_code/c++/boston-bashed/main.cpp
+
+CMakeFiles/name.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/name.dir/main.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/loch/vs_code/c++/boston-bashed/main.cpp > CMakeFiles/name.dir/main.cpp.i
+
+CMakeFiles/name.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/name.dir/main.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/loch/vs_code/c++/boston-bashed/main.cpp -o CMakeFiles/name.dir/main.cpp.s
+
 # Object files for target name
 name_OBJECTS = \
-"CMakeFiles/name.dir/main.cpp.o" \
 "CMakeFiles/name.dir/src/attacks/attack.cpp.o" \
 "CMakeFiles/name.dir/src/game/box.cpp.o" \
 "CMakeFiles/name.dir/src/game/heart.cpp.o" \
 "CMakeFiles/name.dir/src/rendering/rendering.cpp.o" \
-"CMakeFiles/name.dir/src/starting-ending.cpp.o"
+"CMakeFiles/name.dir/src/starting-ending.cpp.o" \
+"CMakeFiles/name.dir/main.cpp.o"
 
 # External object files for target name
 name_EXTERNAL_OBJECTS =
 
-name: CMakeFiles/name.dir/main.cpp.o
 name: CMakeFiles/name.dir/src/attacks/attack.cpp.o
 name: CMakeFiles/name.dir/src/game/box.cpp.o
 name: CMakeFiles/name.dir/src/game/heart.cpp.o
 name: CMakeFiles/name.dir/src/rendering/rendering.cpp.o
 name: CMakeFiles/name.dir/src/starting-ending.cpp.o
+name: CMakeFiles/name.dir/main.cpp.o
 name: CMakeFiles/name.dir/build.make
 name: CMakeFiles/name.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/loch/vs_code/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable name"

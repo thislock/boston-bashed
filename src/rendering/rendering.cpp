@@ -19,6 +19,8 @@ void IMAGE::renderTexture(SDL_Renderer *ren, int x, int y) {
 	SDL_RenderCopy(ren, tex, NULL, &dst);
 }
 
+
+
 void IMAGE::renderScaledTexture(SDL_Renderer *ren, int x, int y, int w, int h){
 	//Setup the destination rectangle to be at the position we want
 	SDL_Rect dst;

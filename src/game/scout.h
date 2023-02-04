@@ -2,15 +2,73 @@
 #ifndef SCOUT_H
 #define SCOUT_H
 
-static float twosCounter = 0;
-static bool twos;
-static int scout_animation_cycle = 0;
-static int head_x;
-static int head_y;
-static int torso_x;
-static int torso_y;
+#pragma once
 
-void animate_scout() {
+#include "global_scout_vars.h"
+#include <SDL.h>
+#include "../macros.h"
+
+
+void renderInputedTexture(
+	SDL_Renderer * ren, 
+	SDL_Texture * tex, 
+	int x, int y, 
+	int w, int h
+) {
+	//Setup the destination rectangle to be at the position we want
+	SDL_Rect dst;
+	dst.x = x;
+	dst.y = y;
+	dst.w = w;
+	dst.h = h;
+	SDL_RenderCopy(ren, tex, NULL, &dst);
+}
+
+void render_scout(
+	SDL_Renderer * renderer, 
+	SDL_Texture * scout_h, 
+	SDL_Texture * scout_torso,
+	SDL_Texture * scout_l
+) {
+
+	renderInputedTexture(
+    renderer,
+		scout_l,
+    legs_x, legs_y,
+    SCOUT_LEGS_SIZE
+  );
+
+	renderInputedTexture(
+    renderer,
+		scout_torso,
+    torso_x, torso_y,
+    SCOUT_TORSO_SIZE
+  );
+  
+	renderInputedTexture(
+    renderer,
+		scout_h,
+    head_x, head_y,
+    SCOUT_HEAD_SIZE
+  );
+}
+
+static bool var_init = true;
+void animate_scout(int boxSize) {
+
+	if (var_init) {
+		
+		head_y = DEFAULT_HEAD_Y_S;
+		torso_y = DEFAULT_TORSO_Y_S;
+		legs_y = DEFAULT_LEGS_Y_S;
+
+		head_x = DEFAULT_HEAD_X_S;
+		torso_x = DEFAULT_TORSO_X_S;
+		legs_x = DEFAULT_LEGS_X_S;
+		
+		var_init = false;
+	}
+
   twosCounter += 0.5;
 	if (twosCounter > .5f) {
 		twos = true;
@@ -46,8 +104,8 @@ void animate_scout() {
 			torso_y++;
 		} else if (scout_animation_cycle == 8) {
 			head_y++;
-			head_x = DEFAULT_HEAD_X;
-			torso_x = DEFAULT_TORSO_X;
+			head_x = DEFAULT_HEAD_X_S;
+			torso_x = DEFAULT_TORSO_X_S;
 		} else if (scout_animation_cycle == 9) {
 			head_x--;
 			torso_x--;

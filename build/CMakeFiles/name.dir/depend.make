@@ -5,7 +5,9 @@ CMakeFiles/name.dir/main.cpp.o: ../include.h
 CMakeFiles/name.dir/main.cpp.o: ../main.cpp
 CMakeFiles/name.dir/main.cpp.o: ../src/attacks/attack.h
 CMakeFiles/name.dir/main.cpp.o: ../src/game/box.h
+CMakeFiles/name.dir/main.cpp.o: ../src/game/global_scout_vars.h
 CMakeFiles/name.dir/main.cpp.o: ../src/game/heart.h
+CMakeFiles/name.dir/main.cpp.o: ../src/game/scout.h
 CMakeFiles/name.dir/main.cpp.o: ../src/macros.h
 CMakeFiles/name.dir/main.cpp.o: ../src/rendering/rendering.h
 CMakeFiles/name.dir/main.cpp.o: ../src/superfile.h
@@ -110,7 +112,6 @@ CMakeFiles/name.dir/src/attacks/attack.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/name.dir/src/attacks/attack.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/name.dir/src/game/box.cpp.o: ../include.h
-CMakeFiles/name.dir/src/game/box.cpp.o: ../src/attacks/attack.h
 CMakeFiles/name.dir/src/game/box.cpp.o: ../src/game/box.cpp
 CMakeFiles/name.dir/src/game/box.cpp.o: ../src/game/box.h
 CMakeFiles/name.dir/src/game/box.cpp.o: ../src/game/heart.h
@@ -164,7 +165,6 @@ CMakeFiles/name.dir/src/game/box.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/name.dir/src/game/box.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/name.dir/src/game/heart.cpp.o: ../include.h
-CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/attacks/attack.h
 CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/game/box.h
 CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/game/heart.cpp
 CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/game/heart.h
@@ -218,7 +218,6 @@ CMakeFiles/name.dir/src/game/heart.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/name.dir/src/game/heart.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../include.h
-CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/attacks/attack.h
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/game/box.h
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/game/heart.h
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/macros.h

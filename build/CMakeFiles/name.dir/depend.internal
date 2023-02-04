@@ -6,7 +6,9 @@ CMakeFiles/name.dir/main.cpp.o
  /home/loch/vs_code/c++/boston-bashed/main.cpp
  /home/loch/vs_code/c++/boston-bashed/src/attacks/attack.h
  /home/loch/vs_code/c++/boston-bashed/src/game/box.h
+ /home/loch/vs_code/c++/boston-bashed/src/game/global_scout_vars.h
  /home/loch/vs_code/c++/boston-bashed/src/game/heart.h
+ /home/loch/vs_code/c++/boston-bashed/src/game/scout.h
  /home/loch/vs_code/c++/boston-bashed/src/macros.h
  /home/loch/vs_code/c++/boston-bashed/src/rendering/rendering.h
  /home/loch/vs_code/c++/boston-bashed/src/superfile.h
@@ -111,7 +113,6 @@ CMakeFiles/name.dir/src/attacks/attack.cpp.o
  /usr/include/SDL2/close_code.h
 CMakeFiles/name.dir/src/game/box.cpp.o
  /home/loch/vs_code/c++/boston-bashed/include.h
- /home/loch/vs_code/c++/boston-bashed/src/attacks/attack.h
  /home/loch/vs_code/c++/boston-bashed/src/game/box.cpp
  /home/loch/vs_code/c++/boston-bashed/src/game/box.h
  /home/loch/vs_code/c++/boston-bashed/src/game/heart.h
@@ -165,7 +166,6 @@ CMakeFiles/name.dir/src/game/box.cpp.o
  /usr/include/SDL2/close_code.h
 CMakeFiles/name.dir/src/game/heart.cpp.o
  /home/loch/vs_code/c++/boston-bashed/include.h
- /home/loch/vs_code/c++/boston-bashed/src/attacks/attack.h
  /home/loch/vs_code/c++/boston-bashed/src/game/box.h
  /home/loch/vs_code/c++/boston-bashed/src/game/heart.cpp
  /home/loch/vs_code/c++/boston-bashed/src/game/heart.h
@@ -219,7 +219,6 @@ CMakeFiles/name.dir/src/game/heart.cpp.o
  /usr/include/SDL2/close_code.h
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o
  /home/loch/vs_code/c++/boston-bashed/include.h
- /home/loch/vs_code/c++/boston-bashed/src/attacks/attack.h
  /home/loch/vs_code/c++/boston-bashed/src/game/box.h
  /home/loch/vs_code/c++/boston-bashed/src/game/heart.h
  /home/loch/vs_code/c++/boston-bashed/src/macros.h

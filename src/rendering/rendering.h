@@ -31,6 +31,9 @@ public:
     int w, int h
   );
 
+  SDL_Texture * returnTexture() {return tex;}
+
 };
+
 
 #endif // RENDERING_H
