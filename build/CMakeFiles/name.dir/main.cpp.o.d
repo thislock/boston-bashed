@@ -216,9 +216,6 @@ CMakeFiles/name.dir/main.cpp.o: \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /home/lochlan/vscode/c++/boston-bashed/src/game/../macros.h \
- /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.h \
- /home/lochlan/vscode/c++/boston-bashed/include.h \
- /home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/iosfwd \
  /usr/include/c++/11/bits/stringfwd.h \
@@ -289,6 +286,9 @@ CMakeFiles/name.dir/main.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
+ /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.h \
+ /home/lochlan/vscode/c++/boston-bashed/include.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.h \
  /home/lochlan/vscode/c++/boston-bashed/src/superfile.h \
  /home/lochlan/vscode/c++/boston-bashed/src/macros.h \
  /home/lochlan/vscode/c++/boston-bashed/src/game/box.h \

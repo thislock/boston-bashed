@@ -49,14 +49,21 @@ int main(int argc, char ** argv) {
 	unique_ptr<IMAGE> scout_attack_test(new IMAGE(mast->renderer, ASSETPATH "attacks/cleaver.bmp"));
 
 	// buttons
-		// attack
-		//unique_ptr<IMAGE> scout_attack_test(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/"));
+		// fight buttons
+		// unselected
+		unique_ptr<IMAGE> attack_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/fight.bmp"));
+		// selected
+		unique_ptr<IMAGE> attack_button_selceted(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/fight_selected.bmp"));
+		
+		// act
+		// unselected
+		unique_ptr<IMAGE> act_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/act.bmp"));
+		// selected
+		unique_ptr<IMAGE> act_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/act_selected.bmp"));
 
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());
 	unique_ptr<PLAYER> heart(new PLAYER());
-
-	std::cout << head_x - (WIN_WIDTH / 2) << '\n' << torso_x << '\n';
 	
 	int scout_animation_cycle = 0;
 
@@ -114,7 +121,10 @@ int main(int argc, char ** argv) {
 						break;
 					case SDLK_LEFT:
 						heart->h_move_left = heart->syntax_compressor;
-						break;                                                            
+						break;                        
+					case SDLK_SPACE:
+						scout_dodge = true;
+						break;                                    
 					default:
 						break;
 				}
@@ -144,6 +154,12 @@ int main(int argc, char ** argv) {
 			scout_head->returnTexture(),
 			scout_torso->returnTexture(),
 			scout_legs->returnTexture()
+		);
+
+		// draws the undertale buttons
+		attack_button->renderTexture(
+			mast->renderer,
+			0, 0
 		);
 			
 

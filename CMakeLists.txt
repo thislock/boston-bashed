@@ -15,6 +15,8 @@ src/rendering/rendering.cpp
 
 src/starting-ending.cpp
 
+src/
+
 main.cpp
 
 )

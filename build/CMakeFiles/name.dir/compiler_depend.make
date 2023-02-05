@@ -258,9 +258,6 @@ CMakeFiles/name.dir/main.cpp.o: ../main.cpp \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
   ../src/macros.h \
-  ../src/attacks/attack.h \
-  ../include.h \
-  ../src/rendering/rendering.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -353,6 +350,9 @@ CMakeFiles/name.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  ../src/attacks/attack.h \
+  ../include.h \
+  ../src/rendering/rendering.h \
   ../src/superfile.h \
   ../src/macros.h \
   ../src/game/box.h \
@@ -2186,6 +2186,10 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 
 ../src/superfile.h:
 
+../src/rendering/rendering.h:
+
+../src/attacks/attack.h:
+
 /usr/include/c++/11/bits/istream.tcc:
 
 /usr/include/c++/11/istream:
@@ -2223,6 +2227,10 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 /usr/include/c++/11/ext/string_conversions.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
+
+../include.h:
+
+/usr/include/c++/11/bits/functional_hash.h:
 
 /usr/include/c++/11/bits/shared_ptr.h:
 
@@ -2302,12 +2310,6 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 
 /usr/include/c++/11/ostream:
 
-../src/rendering/rendering.h:
-
-/usr/include/c++/11/bits/functional_hash.h:
-
-../include.h:
-
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
 
 /usr/include/SDL2/SDL_clipboard.h:
@@ -2385,10 +2387,6 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:
-
-/usr/include/c++/11/iostream:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/uintrintrin.h:
 
@@ -2611,6 +2609,10 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/c++/11/iostream:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/waitpkgintrin.h:
 
@@ -2911,5 +2913,3 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 /usr/include/c++/11/bits/locale_classes.tcc:
 
 ../src/macros.h:
-
-../src/attacks/attack.h:

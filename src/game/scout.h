@@ -7,6 +7,7 @@
 #include "global_scout_vars.h"
 #include <SDL.h>
 #include "../macros.h"
+#include <iostream>
 
 
 void renderInputedTexture(
@@ -54,7 +55,15 @@ void render_scout(
 
 }
 
+// for initial variable setting.
+
 static bool var_init = true;
+// for the dodge animation, keeps track of what frame your on
+static int dodge_animation_cycle = 0;
+// for dodge animation, controls your velocity
+static int dodge_animation_velocity = 1;
+
+// all scout animation events
 void animate_scout() {
 
 	if (var_init) {
@@ -70,13 +79,53 @@ void animate_scout() {
 		var_init = false;
 	}
 
+	// for dodge animation
+	if (scout_dodge) {
+
+		dodge_animation_cycle++;
+
+		// general movment code
+		if (dodge_animation_cycle <= 20) {
+			head_x  -= dodge_animation_velocity;
+			torso_x -= dodge_animation_velocity;
+			legs_x  -= dodge_animation_velocity;
+		} else {
+			head_x  += dodge_animation_velocity;
+			torso_x += dodge_animation_velocity;
+			legs_x  += dodge_animation_velocity;
+		}
+
+		// velocity changes
+		if (dodge_animation_cycle == 5)
+			dodge_animation_velocity++;
+		if (dodge_animation_cycle == 10)
+			dodge_animation_velocity++;
+		if (dodge_animation_cycle == 15)
+			dodge_animation_velocity++;
+
+		if (dodge_animation_cycle == 25)
+			dodge_animation_velocity--;
+		if (dodge_animation_cycle == 30)
+			dodge_animation_velocity--;
+		if (dodge_animation_cycle == 35)
+			dodge_animation_velocity--;
+
+
+		// ending code
+		if (dodge_animation_cycle >= 40) {
+			legs_x = DEFAULT_LEGS_X;
+			scout_dodge = false;
+		}
+	} else {
+		dodge_animation_cycle = 0;
+	}
+	// for idle animation
   twosCounter += 0.5;
 	if (twosCounter > .5f) {
 		twos = true;
 		twosCounter = 0.f;
 	}
 	if (twos) {
-
 		scout_animation_cycle++;
 		if (scout_animation_cycle > 15) {
 			head_y--;
@@ -106,8 +155,6 @@ void animate_scout() {
 			torso_y++;
 		} else if (scout_animation_cycle == 8) {
 			head_y++;
-			head_x = DEFAULT_HEAD_X;
-			torso_x = DEFAULT_TORSO_X;
 		} else if (scout_animation_cycle == 9) {
 			head_x--;
 			torso_x--;
