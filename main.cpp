@@ -59,7 +59,7 @@ int main(int argc, char ** argv) {
 		// unselected
 		unique_ptr<IMAGE> act_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/act.bmp"));
 		// selected
-		unique_ptr<IMAGE> act_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/act_selected.bmp"));
+		unique_ptr<IMAGE> act_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/selected_act.bmp"));
 
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());
