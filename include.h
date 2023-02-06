@@ -11,5 +11,6 @@
 #include "src/macros.h"
 #include "src/game/box.h"
 #include "src/game/heart.h"
+#include "src/game/sounds/sounds.h"
 
 #endif // INCLUDE_H

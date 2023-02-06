@@ -286,13 +286,7 @@ CMakeFiles/name.dir/main.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.h \
- /home/lochlan/vscode/c++/boston-bashed/include.h \
- /home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.h \
- /home/lochlan/vscode/c++/boston-bashed/src/superfile.h \
- /home/lochlan/vscode/c++/boston-bashed/src/macros.h \
- /home/lochlan/vscode/c++/boston-bashed/src/game/box.h \
- /home/lochlan/vscode/c++/boston-bashed/src/game/heart.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.h \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -312,4 +306,12 @@ CMakeFiles/name.dir/main.cpp.o: \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.h \
+ /home/lochlan/vscode/c++/boston-bashed/include.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/superfile.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/macros.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/game/box.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/game/heart.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.h

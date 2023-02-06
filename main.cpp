@@ -23,6 +23,7 @@ int main(int argc, char ** argv) {
   SDL_Event event;
 
 	SDL_Init(SDL_INIT_VIDEO);
+	SDL_Init(SDL_INIT_AUDIO);
 
 	unique_ptr<MASTER> mast(new MASTER());
 
@@ -44,16 +45,26 @@ int main(int argc, char ** argv) {
     unique_ptr<IMAGE> scout_head  (new IMAGE(mast->renderer, ASSETPATH "scout/head.bmp"));
     unique_ptr<IMAGE> scout_torso (new IMAGE(mast->renderer, ASSETPATH "scout/torso.bmp"));
     unique_ptr<IMAGE> scout_legs  (new IMAGE(mast->renderer, ASSETPATH "scout/legs.bmp"));
+		// alternate scout sprites
+    unique_ptr<IMAGE> scout_raised_hands_torso(new IMAGE(mast->renderer, ASSETPATH "scout/alternate_parts/hand-raised-torso.bmp"));
+    unique_ptr<IMAGE> scout_winking_head(new IMAGE(mast->renderer, ASSETPATH "scout/alternate_parts/winking-head.bmp"));
+		
+
+	// holds the states of the body parts (if a differnt texture is needed to be rendered)
+	SDL_Texture * head_state;
+	SDL_Texture * torso_state;
+	SDL_Texture * legs_state;
 
 	// test entity system
 	unique_ptr<IMAGE> scout_attack_test(new IMAGE(mast->renderer, ASSETPATH "attacks/cleaver.bmp"));
 
 	// buttons
 		// fight buttons
+
 		// unselected
 		unique_ptr<IMAGE> attack_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/fight.bmp"));
 		// selected
-		unique_ptr<IMAGE> attack_button_selceted(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/fight_selected.bmp"));
+		unique_ptr<IMAGE> attack_button_selceted(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/selected_fight.bmp"));
 		
 		// act
 		// unselected
@@ -74,16 +85,15 @@ int main(int argc, char ** argv) {
 	bool twos = true;
 	float twosCounter = 0.f;
 
+	// create sound
+	unique_ptr<SOUND> speaking_sound(new SOUND(SOUNDPATH "test.wav"));
+
 	// master loop
   while (!quit) {
 
-		if (crashMain) {
-			return 1;
-		}
-
 		// repeat until all events are handled
   	for (; SDL_PollEvent(&event);) {
-
+			
 			// handles exiting event
 			if (event.type == SDL_QUIT)
 				quit = true;
@@ -177,7 +187,9 @@ int main(int argc, char ** argv) {
 		SDL_Delay((1000 / 30));
 
 	}
-	
+
+	SDL_DestroyTexture(torso_state);
+
 
   SDL_Quit();
 

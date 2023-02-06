@@ -288,4 +288,5 @@ CMakeFiles/name.dir/src/rendering/rendering.cpp.o: \
  /home/lochlan/vscode/c++/boston-bashed/src/rendering/../../src/superfile.h \
  /home/lochlan/vscode/c++/boston-bashed/src/rendering/../../src/macros.h \
  /home/lochlan/vscode/c++/boston-bashed/src/rendering/../../src/game/box.h \
- /home/lochlan/vscode/c++/boston-bashed/src/rendering/../../src/game/heart.h
+ /home/lochlan/vscode/c++/boston-bashed/src/rendering/../../src/game/heart.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/rendering/../../src/game/sounds/sounds.h

@@ -32,6 +32,10 @@ void IMAGE::renderScaledTexture(SDL_Renderer *ren, int x, int y, int w, int h){
 }
 
 IMAGE::IMAGE(SDL_Renderer * renderer, const std::string &file) {
+
+	// sets the filename for error handling
+	filename = file;
+
 	// Load the image
 	SDL_Surface *loadedImage = SDL_LoadBMP(file.c_str());
 	
@@ -46,7 +50,12 @@ IMAGE::IMAGE(SDL_Renderer * renderer, const std::string &file) {
 		}
 	}
 	else {
-		cout << "failed to load bmp image, check filename and drivers and try again.\n";
+		cout << "failed to load " << filename << ", check filename and try again.\n";
     EXIT
   }
+}
+
+IMAGE::~IMAGE() {
+	SDL_DestroyTexture(tex);
+	cout << "destroyed texture, " << filename << endl;
 }

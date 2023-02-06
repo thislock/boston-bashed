@@ -8,7 +8,10 @@
 #include <SDL.h>
 #include "../macros.h"
 #include <iostream>
+#include "sounds/sounds.h"
+#include <memory>
 
+using std::unique_ptr;
 
 void renderInputedTexture(
 	SDL_Renderer * ren, 
@@ -26,12 +29,17 @@ void renderInputedTexture(
 }
 
 void render_scout(
-	SDL_Renderer * renderer, 
+	// rendering surface
+	SDL_Renderer * renderer,
+	// head texture 
 	SDL_Texture * scout_h, 
+	// torso texture
 	SDL_Texture * scout_torso,
+	// legs texture
 	SDL_Texture * scout_l
 ) {
 
+	// draws the legs
 	renderInputedTexture(
     renderer,
 		scout_l,
@@ -39,6 +47,7 @@ void render_scout(
     SCOUT_LEGS_SIZE
   );
 
+	// draws the torso
 	renderInputedTexture(
     renderer,
 		scout_torso,
@@ -46,6 +55,7 @@ void render_scout(
     SCOUT_TORSO_SIZE
   );
   
+	// draws the head
 	renderInputedTexture(
     renderer,
 		scout_h,
@@ -61,7 +71,9 @@ static bool var_init = true;
 // for the dodge animation, keeps track of what frame your on
 static int dodge_animation_cycle = 0;
 // for dodge animation, controls your velocity
-static int dodge_animation_velocity = 1;
+static int dodge_animation_velocity = 3;
+// for dodge, plays swing sound thing
+unique_ptr<SOUND> attack_sound(new SOUND(SOUNDPATH "hit_sound.wav"));
 
 // all scout animation events
 void animate_scout() {
@@ -81,6 +93,10 @@ void animate_scout() {
 
 	// for dodge animation
 	if (scout_dodge) {
+
+		// for playing the sound
+		if (dodge_animation_cycle == 0)
+			attack_sound->playsound();
 
 		dodge_animation_cycle++;
 

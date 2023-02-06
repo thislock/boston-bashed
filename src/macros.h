@@ -6,8 +6,8 @@
 #define BOX_THICCNESS 5
 
 // window dimentions
-static int WIN_WIDTH = 700;
-static int WIN_HEIGHT = 700;
+static int WIN_WIDTH = 800;
+static int WIN_HEIGHT = 800;
 
 // title of the window
 #define TITLE "boston bashed"
@@ -32,7 +32,7 @@ static int WIN_HEIGHT = 700;
 // default positions of the scout body parts
 // head pos's
 #define DEFAULT_HEAD_X ((WIN_WIDTH / 2) - (WIN_WIDTH / 16) - 3)
-#define DEFAULT_HEAD_Y (WIN_HEIGHT / 6) + (WIN_HEIGHT / 30)
+#define DEFAULT_HEAD_Y (WIN_HEIGHT / 6) + (WIN_HEIGHT / 30) + 3
 // torso pos's
 #define DEFAULT_TORSO_X ((WIN_WIDTH / 2) - (WIN_WIDTH / 14) - 3)
 #define DEFAULT_TORSO_Y (WIN_HEIGHT / 5) + (WIN_HEIGHT / 9)

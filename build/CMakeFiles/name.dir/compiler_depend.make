@@ -350,13 +350,7 @@ CMakeFiles/name.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  ../src/attacks/attack.h \
-  ../include.h \
-  ../src/rendering/rendering.h \
-  ../src/superfile.h \
-  ../src/macros.h \
-  ../src/game/box.h \
-  ../src/game/heart.h \
+  ../src/game/sounds/sounds.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
@@ -381,7 +375,15 @@ CMakeFiles/name.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/include/c++/11/pstl/execution_defs.h
+  /usr/include/c++/11/pstl/execution_defs.h \
+  ../src/attacks/attack.h \
+  ../include.h \
+  ../src/rendering/rendering.h \
+  ../src/superfile.h \
+  ../src/macros.h \
+  ../src/game/box.h \
+  ../src/game/heart.h \
+  ../src/game/sounds/sounds.h
 
 CMakeFiles/name.dir/src/attacks/attack.cpp.o: ../src/attacks/attack.cpp \
   /usr/include/stdc-predef.h \
@@ -735,6 +737,7 @@ CMakeFiles/name.dir/src/attacks/attack.cpp.o: ../src/attacks/attack.cpp \
   ../src/macros.h \
   ../src/game/box.h \
   ../src/game/heart.h \
+  ../src/game/sounds/sounds.h \
   ../src/attacks/attack.h
 
 CMakeFiles/name.dir/src/game/box.cpp.o: ../src/game/box.cpp \
@@ -1088,7 +1091,8 @@ CMakeFiles/name.dir/src/game/box.cpp.o: ../src/game/box.cpp \
   ../src/superfile.h \
   ../src/macros.h \
   ../src/game/box.h \
-  ../src/game/heart.h
+  ../src/game/heart.h \
+  ../src/game/sounds/sounds.h
 
 CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/game/heart.cpp \
   /usr/include/stdc-predef.h \
@@ -1441,7 +1445,8 @@ CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/game/heart.cpp \
   ../src/superfile.h \
   ../src/macros.h \
   ../src/game/box.h \
-  ../src/game/heart.h
+  ../src/game/heart.h \
+  ../src/game/sounds/sounds.h
 
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/rendering/rendering.cpp \
   /usr/include/stdc-predef.h \
@@ -1794,7 +1799,8 @@ CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/rendering/rendering.cp
   ../src/superfile.h \
   ../src/macros.h \
   ../src/game/box.h \
-  ../src/game/heart.h
+  ../src/game/heart.h \
+  ../src/game/sounds/sounds.h
 
 CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
   /usr/include/stdc-predef.h \
@@ -2148,6 +2154,16 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 
 ../src/game/box.cpp:
 
+../src/game/heart.h:
+
+../src/game/box.h:
+
+../src/superfile.h:
+
+../src/rendering/rendering.h:
+
+../src/attacks/attack.h:
+
 /usr/include/c++/11/pstl/glue_memory_defs.h:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
@@ -2180,17 +2196,9 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 
 /usr/include/c++/11/memory:
 
-../src/game/heart.h:
-
-../src/game/box.h:
-
-../src/superfile.h:
-
-../src/rendering/rendering.h:
-
-../src/attacks/attack.h:
-
 /usr/include/c++/11/bits/istream.tcc:
+
+../src/game/sounds/sounds.h:
 
 /usr/include/c++/11/istream:
 

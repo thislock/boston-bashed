@@ -7,9 +7,15 @@
 #include <SDL.h>
 #include <iostream>
 
+#include<string>
+
+using std::string;
+
 using std::cout;
 
 class IMAGE {
+
+  string filename;
 
 public:
 
@@ -17,6 +23,8 @@ public:
     SDL_Renderer * renderer, 
     const std::string &file
   );
+
+  ~IMAGE();
 
   SDL_Texture * tex;
 

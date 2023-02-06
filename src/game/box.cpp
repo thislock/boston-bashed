@@ -23,7 +23,7 @@ void BOX::drawBox(SDL_Renderer * renderer) {
 		// left vertical line
 		SDL_RenderDrawLine(
 			renderer, 
-			box_x + i, box_y, 
+			box_x + i, box_y,
 			box_x + i, box_y + box_height
 		);
 		// right vertical line
