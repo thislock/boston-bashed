@@ -55,6 +55,35 @@ IMAGE::IMAGE(SDL_Renderer * renderer, const std::string &file) {
   }
 }
 
+void IMAGE::setTexture(SDL_Renderer * renderer, const std::string &file) {
+
+	// sets the filename for error handling
+	filename = file;
+
+	// Load the image
+	SDL_Surface *loadedImage = SDL_LoadBMP(file.c_str());
+	
+	// If the loading went ok, convert to texture and return the texture
+	if (loadedImage != nullptr) {
+		tex = SDL_CreateTextureFromSurface(renderer, loadedImage);
+		SDL_FreeSurface(loadedImage);
+		//Make sure converting went ok too
+		if (tex == nullptr) {
+			cout << "failed to create texture from surface, unknown cause.\n";
+      EXIT
+		}
+	}
+	else {
+		cout << "failed to load " << filename << ", check filename and try again.\n";
+    EXIT
+  }
+}
+
+IMAGE::IMAGE() {
+	// pointless processing
+	int x;
+}
+
 IMAGE::~IMAGE() {
 	SDL_DestroyTexture(tex);
 	cout << "destroyed texture, " << filename << endl;

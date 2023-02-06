@@ -72,8 +72,7 @@ static bool var_init = true;
 static int dodge_animation_cycle = 0;
 // for dodge animation, controls your velocity
 static int dodge_animation_velocity = 3;
-// for dodge, plays swing sound thing
-unique_ptr<SOUND> attack_sound(new SOUND(SOUNDPATH "hit_sound.wav"));
+
 
 // all scout animation events
 void animate_scout() {
@@ -94,9 +93,6 @@ void animate_scout() {
 	// for dodge animation
 	if (scout_dodge) {
 
-		// for playing the sound
-		if (dodge_animation_cycle == 0)
-			attack_sound->playsound();
 
 		dodge_animation_cycle++;
 

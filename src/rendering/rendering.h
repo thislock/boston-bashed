@@ -19,12 +19,19 @@ class IMAGE {
 
 public:
 
-	IMAGE(
+  IMAGE();
+	
+  IMAGE(
     SDL_Renderer * renderer, 
     const std::string &file
   );
 
   ~IMAGE();
+  
+  void setTexture(
+    SDL_Renderer * renderer, 
+    const std::string &file
+  );
 
   SDL_Texture * tex;
 

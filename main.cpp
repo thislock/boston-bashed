@@ -155,6 +155,7 @@ int main(int argc, char ** argv) {
 			HEART_SIZE, HEART_SIZE
 		);
 
+		attacks(mast->renderer, heart->heart_x, heart->heart_y);
 
 		// does what the fn says
 		animate_scout();
@@ -188,7 +189,9 @@ int main(int argc, char ** argv) {
 
 	}
 
+	SDL_DestroyTexture(head_state);
 	SDL_DestroyTexture(torso_state);
+	SDL_DestroyTexture(legs_state);
 
 
   SDL_Quit();
