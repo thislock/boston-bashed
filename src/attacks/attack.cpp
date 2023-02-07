@@ -1,6 +1,5 @@
 #include "../../include.h"
 #include "attack.h"
-#include "attack_script.h"
 #include <memory>
 
 using std::unique_ptr;
@@ -33,29 +32,33 @@ bool touching_heart(
   return final_num;
 }
 
+#include "attack_script.h"
+
 // attack test init
-makeimg_ test1_texture _makeimg
-
-unique_ptr<ATTACK> test1(new ATTACK());
-
 // for initilizing the attacks
-static bool attack_init = true;
+makeimg_ test1_texture _makeimg
+makeattack_ test1 _makeattack
 
-void attacks(SDL_Renderer * renderer, int heart_x, int heart_y) {
+DONTREMOVE
+attack_script {
 
-  if (attack_init) {
-    test1_texture->setTexture(renderer, ASSETPATH "attacks/cleaver.bmp");
-  }
+  init
+    test1_texture setSprite
+      "attacks/cleaver.bmp"
+    endSetSprite
+    test1 GET x = WIN_WIDTH;
+    test1 GET y = WIN_HEIGHT;
+  endinit
 
-  test1->x++;
-  test1->y++;
+  test1->x -= heart_x / 100;
+  test1->y += heart_y / 100;
+  
 
   if (!touching_heart(heart_x, heart_y, test1->x, test1->y, 60, 60)) {
-    test1_texture->renderScaledTexture(
-      renderer,
+    test1_texture DRAW
       test1->x, test1->y,
       60, 60
-    );
+    END_DRAW
   }
 
 }

@@ -6,14 +6,14 @@
 #define BOX_THICCNESS 5
 
 // window dimentions
-static int WIN_WIDTH = 800;
-static int WIN_HEIGHT = 800;
+const int WIN_WIDTH = 900;
+const int WIN_HEIGHT = 900;
 
 // title of the window
 #define TITLE "boston bashed"
 
 // scale of the undertale heart
-#define HEART_SIZE (WIN_HEIGHT / 50)
+#define HEART_SIZE (WIN_HEIGHT / 55)
 
 // scale of the scout body parts
 #define  SCOUT_HEAD_WIDTH (WIN_WIDTH / 8) - (WIN_WIDTH / 150)

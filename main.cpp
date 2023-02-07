@@ -27,17 +27,29 @@ int main(int argc, char ** argv) {
 
 	unique_ptr<MASTER> mast(new MASTER());
 
+	SDL_Window * cover_window = SDL_CreateWindow(
+		"dont mind me.",
+		SDL_WINDOWPOS_UNDEFINED,
+		SDL_WINDOWPOS_UNDEFINED,
+		0, 0, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP
+	);
+	
+	SDL_Renderer * cover_window_renderer = SDL_CreateRenderer(cover_window, -1, SDL_RENDERER_ACCELERATED);
+	
+	SDL_SetRenderDrawColor(cover_window_renderer, 0, 0, 0, 255);
+	SDL_RenderPresent(cover_window_renderer);
+
   mast->window = SDL_CreateWindow(
 		TITLE,
  		SDL_WINDOWPOS_UNDEFINED, 
 		SDL_WINDOWPOS_UNDEFINED, 
 		WIN_WIDTH, WIN_HEIGHT, 
-		SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN
+		SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_BORDERLESS
 	);
 
 	mast->renderer = SDL_CreateRenderer(mast->window, -1, SDL_RENDERER_ACCELERATED);
 
-	
+
 	// images
 	// heart image
 	unique_ptr<IMAGE> heart_img(new IMAGE(mast->renderer, ASSETPATH "interactable/heart.bmp"));
@@ -147,7 +159,7 @@ int main(int argc, char ** argv) {
 		heart->heartKeyHandler();
 		box->drawBox(mast->renderer);
 
-        // draws the undertale heart
+    // draws the undertale heart
 		heart_img->renderScaledTexture(
 			mast->renderer, 
 			heart->heart_x, 
@@ -155,7 +167,6 @@ int main(int argc, char ** argv) {
 			HEART_SIZE, HEART_SIZE
 		);
 
-		attacks(mast->renderer, heart->heart_x, heart->heart_y);
 
 		// does what the fn says
 		animate_scout();
@@ -172,7 +183,9 @@ int main(int argc, char ** argv) {
 			mast->renderer,
 			0, 0
 		);
-			
+
+		// renders all things that can damage the	heart
+		attacks(mast->renderer, heart->heart_x, heart->heart_y);
 
 		// draws over the weird pixel in the corner of the heart for some reason
 		SDL_SetRenderDrawColor(mast->renderer, 0, 0, 0, 255);
@@ -193,6 +206,7 @@ int main(int argc, char ** argv) {
 	SDL_DestroyTexture(torso_state);
 	SDL_DestroyTexture(legs_state);
 
+	SDL_DestroyWindow(cover_window);
 
   SDL_Quit();
 
