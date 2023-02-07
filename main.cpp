@@ -31,7 +31,7 @@ int main(int argc, char ** argv) {
 		"dont mind me.",
 		SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
-		0, 0, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP
+		0, 0, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP
 	);
 	
 	SDL_Renderer * cover_window_renderer = SDL_CreateRenderer(cover_window, -1, SDL_RENDERER_ACCELERATED);
@@ -155,6 +155,7 @@ int main(int argc, char ** argv) {
 
 		// clears the buffer for new things to be drawn.
 		SDL_RenderClear(mast->renderer);
+		SDL_RenderClear(cover_window_renderer);
 
 		heart->heartKeyHandler();
 		box->drawBox(mast->renderer);
@@ -170,12 +171,22 @@ int main(int argc, char ** argv) {
 
 		// does what the fn says
 		animate_scout();
+
+		// sets what scout texture to draw
+		if (scout_dodge) {
+			head_state = scout_winking_head->returnTexture();
+		} else {
+			head_state = scout_head->returnTexture();
+		}
+		torso_state = scout_torso->returnTexture();
+		legs_state = scout_legs->returnTexture();
+
 		// draws the scout piese's
 		render_scout(
 			mast->renderer,
-			scout_head->returnTexture(),
-			scout_torso->returnTexture(),
-			scout_legs->returnTexture()
+			head_state,
+			torso_state,
+			legs_state
 		);
 
 		// draws the undertale buttons
@@ -197,6 +208,9 @@ int main(int argc, char ** argv) {
 		// display things in the renderer buffer.
 		SDL_RenderPresent(mast->renderer);
 
+		SDL_SetRenderDrawColor(cover_window_renderer, 0, 0, 0, 255);
+		SDL_RenderPresent(cover_window_renderer);
+
 		// for the fps
 		SDL_Delay((1000 / 30));
 
@@ -206,6 +220,7 @@ int main(int argc, char ** argv) {
 	SDL_DestroyTexture(torso_state);
 	SDL_DestroyTexture(legs_state);
 
+	SDL_DestroyRenderer(cover_window_renderer);
 	SDL_DestroyWindow(cover_window);
 
   SDL_Quit();
