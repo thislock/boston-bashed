@@ -1,51 +1,134 @@
 
 #include "buttons.h"
 
-const int fight_x = 0;
-const int fight_y = 0;
+#include <iostream>
 
-const int act_x = 0;
-const int act_y = 0;
+// buttons
 
-const int item_x = 0;
-const int item_y = 0;
+// fight
+// unselected
+unique_ptr<IMAGE> attack_button(new IMAGE());
+// selected
+unique_ptr<IMAGE> attack_button_selceted(new IMAGE());
+// act
+// unselected
+unique_ptr<IMAGE> act_button(new IMAGE());
+// selected
+unique_ptr<IMAGE> act_button_selected(new IMAGE());
+// item
+// unselected
+unique_ptr<IMAGE> item_button(new IMAGE());
+// selected
+unique_ptr<IMAGE> item_button_selected(new IMAGE());
+// mercy
+// unselected
+unique_ptr<IMAGE> mercy_button(new IMAGE());
+// selected
+unique_ptr<IMAGE> mercy_button_selected(new IMAGE());
 
-const int mercy_x = 0;
-const int mercy_y = 0;
 
-// 1 for fight 2 for act, 3 for item, 4 for mercy
-static int button_selected = 1;
+const int fight_x = WIN_WIDTH / 10;
 
-void draw_buttons(
-  SDL_Renderer * renderer,
-  // fight button textures
-  SDL_Texture * fight_unselected,
-  SDL_Texture * fight_selected,
-  // act button textures
-  SDL_Texture * act_unselected,
-  SDL_Texture * act_selected,
-  // item button textures
-  SDL_Texture * item_unselected,
-  SDL_Texture * item_selected,
-  // mercy button textures
-  SDL_Texture * mercy_unselected,
-  SDL_Texture * mercy_selected
-) {
+const int act_x = WIN_WIDTH / 3 - (WIN_WIDTH / 30);
 
-  if (button_selected == 1) {
+const int item_x = WIN_WIDTH - (WIN_WIDTH / 2) - 5;
+
+const int mercy_x = (WIN_WIDTH / 3 + (WIN_WIDTH / 3)) + WIN_WIDTH / 40;
+
+const int button_y = WIN_HEIGHT - (WIN_HEIGHT / 6);
+
+const int button_width = WIN_WIDTH / 5;
+const int button_height = WIN_HEIGHT / 10;
+
+// for adding the assetpaths and stuff to the images
+static bool button_init = true;
+
+void draw_buttons(SDL_Renderer * renderer, int selected, bool turn) {
+
+  if (button_init) {
+    
+    attack_button->setTexture(renderer, ASSETPATH "interactable/buttons/fight/fight.bmp");
+    attack_button_selceted->setTexture(renderer, ASSETPATH "interactable/buttons/fight/selected_fight.bmp");
+    
+    act_button->setTexture(renderer, ASSETPATH "interactable/buttons/act/act.bmp");
+    act_button_selected->setTexture(renderer, ASSETPATH "interactable/buttons/act/selected_act.bmp");
+    
+    item_button->setTexture(renderer, ASSETPATH "interactable/buttons/item/item.bmp");
+    item_button_selected->setTexture(renderer, ASSETPATH "interactable/buttons/item/selected_item.bmp");
+    
+    mercy_button->setTexture(renderer, ASSETPATH "interactable/buttons/mercy/mercy.bmp");
+    mercy_button_selected->setTexture(renderer, ASSETPATH "interactable/buttons/mercy/selected_mercy.bmp");
+  
+    button_init = false;
+  }
+
+  if (selected == 1) {
     renderInputedTexture(
       renderer,
-      fight_selected,
-      fight_x, fight_y,
-      100, 200
+      attack_button_selceted->tex,
+      fight_x, button_y,
+      button_width, button_height
     );
   } else {
     renderInputedTexture(
       renderer,
-      fight_selected,
-      act_x, act_y,
-      100, 200
+      attack_button->tex,
+      fight_x, button_y,
+      button_width, button_height
+    );
+  }
+
+  if (selected == 2) {
+    renderInputedTexture(
+      renderer,
+      act_button_selected->tex,
+      act_x, button_y + 3,
+      button_width, button_height
+    );
+  } else {
+    renderInputedTexture(
+      renderer,
+      act_button->tex,
+      act_x, button_y + 3,
+      button_width, button_height
+    );
+  }
+
+  if (selected == 3) {
+    renderInputedTexture(
+      renderer,
+      item_button_selected->tex,
+      item_x, button_y + 2,
+      button_width, button_height
+    );
+  } else {
+    renderInputedTexture(
+      renderer,
+      item_button->tex,
+      item_x, button_y + 2,
+      button_width, button_height
+    );
+  }
+
+  if (selected == 4) {
+    renderInputedTexture(
+      renderer,
+      mercy_button_selected->tex,
+      mercy_x, button_y - 1,
+      button_width, button_height
+    );
+  } else {
+    renderInputedTexture(
+      renderer,
+      mercy_button->tex,
+      mercy_x, button_y - 1,
+      button_width, button_height
     );
   }
   
 }
+
+
+
+
+

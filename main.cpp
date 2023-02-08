@@ -4,6 +4,9 @@
 // attacks and related functions
 #include "src/attacks/attack.h"
 
+// for undertale buttons
+#include "src/game/buttons/buttons.h"
+
 #include "include.h"
 
 #include <SDL.h>
@@ -70,33 +73,6 @@ int main(int argc, char ** argv) {
 	// test entity system
 	unique_ptr<IMAGE> scout_attack_test(new IMAGE(mast->renderer, ASSETPATH "attacks/cleaver.bmp"));
 
-	// buttons
-
-		// fight
-		// unselected
-		unique_ptr<IMAGE> attack_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/fight.bmp"));
-		// selected
-		unique_ptr<IMAGE> attack_button_selceted(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/selected_fight.bmp"));
-		
-		// act
-		// unselected
-		unique_ptr<IMAGE> act_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/act.bmp"));
-		// selected
-		unique_ptr<IMAGE> act_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/selected_act.bmp"));
-
-		// item
-		// unselected
-		unique_ptr<IMAGE> item_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/item/item.bmp"));
-		// selected
-		unique_ptr<IMAGE> item_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/item/selected_item.bmp"));
-
-		// mercy
-		// unselected
-		unique_ptr<IMAGE> mercy_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/mercy/mercy.bmp"));
-		// selected
-		unique_ptr<IMAGE> mercy_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/mercy/selected_mercy.bmp"));
-
-
 
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());
@@ -107,15 +83,30 @@ int main(int argc, char ** argv) {
 	// attacks
 	int attack = 1;
 
-	// for animatining the scout on twos - every other frame is skipped
-	bool twos = true;
-	float twosCounter = 0.f;
+	
+	// 1 for fight 2 for act, 3 for item, 4 for mercy
+	int button_selected = 1;
+	// adds delay between selecting buttons for less jank
+	bool button_delay = false;
+	// for when you, or the oppenent is attacking
+	bool scout_turn = false;
+	// for when you are in the food menu, or attack menu
+	bool enterMenu = false;
+
+	// for when scout dodges your attacks
+  bool scout_dodge = true;
 
 	// create sound
 	unique_ptr<SOUND> speaking_sound(new SOUND(SOUNDPATH "test.wav"));
 
 	// master loop
   while (!quit) {
+
+		// checks if the button selected isnt possible, and returns to other end
+		if (button_selected < 1 && !scout_turn)
+			button_selected = 4;
+		if (button_selected > 4 && !scout_turn)
+			button_selected = 1;
 
 		// repeat until all events are handled
   	for (; SDL_PollEvent(&event);) {
@@ -136,34 +127,66 @@ int main(int argc, char ** argv) {
 				switch (event.type) {
 					case SDL_KEYDOWN:
 						heart->syntax_compressor = true;
+						button_delay = true;
 						break;
 					case SDL_KEYUP:
 						heart->syntax_compressor = false;
+						button_delay = false;
 						break;
 					default:
 						break;
 				}
 
 				// handles keyboard events
+
 				switch (event.key.keysym.sym) {
+					
 					case SDLK_UP:
-						heart->h_move_up = heart->syntax_compressor;
+						if (scout_turn) {
+							heart->h_move_up = heart->syntax_compressor;
+						}
 						break;
 					case SDLK_DOWN:
-						heart->h_move_down = heart->syntax_compressor;
+						if (scout_turn) {
+							heart->h_move_down = heart->syntax_compressor;
+						}
 						break;
 					case SDLK_RIGHT:
-						heart->h_move_right = heart->syntax_compressor;
+						if (!scout_turn && !button_delay && !enterMenu) {
+							button_selected++;
+						} else if (scout_turn) {
+							heart->h_move_right = heart->syntax_compressor;
+						}
 						break;
 					case SDLK_LEFT:
-						heart->h_move_left = heart->syntax_compressor;
-						break;                        
-					case SDLK_SPACE:
-						scout_dodge = true;
-						break;                                    
+					  if (!scout_turn && button_delay && !enterMenu) {
+							button_selected--;
+						} else if (scout_turn) {
+							heart->h_move_left = heart->syntax_compressor;
+						}
+						break;
+					
+					case SDLK_z:
+						enterMenu = true;
+						break;
+                                  
 					default:
 						break;
+
 				}
+			}
+		}
+
+		if (enterMenu) {
+			switch (button_selected) {
+				case 1:
+					scout_dodge = true;
+					enterMenu = false;
+					break;
+
+				default:
+					enterMenu = false;
+					break;
 			}
 		}
 
@@ -174,14 +197,14 @@ int main(int argc, char ** argv) {
 		heart->heartKeyHandler();
 		box->drawBox(mast->renderer);
 
-    // draws the undertale heart
+    // draws the undertale heart if its scouts turn
+		if (scout_turn)
 		heart_img->renderScaledTexture(
 			mast->renderer, 
 			heart->heart_x, 
 			heart->heart_y, 
 			HEART_SIZE, HEART_SIZE
 		);
-
 
 		// does what the fn says
 		animate_scout();
@@ -204,10 +227,7 @@ int main(int argc, char ** argv) {
 		);
 
 		// draws the undertale buttons
-		attack_button->renderTexture(
-			mast->renderer,
-			0, 0
-		);
+		draw_buttons(mast->renderer, button_selected, scout_turn);
 
 		// renders all things that can damage the	heart
 		attacks(mast->renderer, heart->heart_x, heart->heart_y);

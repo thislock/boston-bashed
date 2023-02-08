@@ -9,8 +9,6 @@ static float twosCounter = 0;
 static bool twos;
 static int scout_animation_cycle = 0;
 
-// for when scout dodges your attacks
-static bool scout_dodge = false;
 
 // head pos
 static int head_x;
