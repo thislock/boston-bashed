@@ -15,16 +15,13 @@ bool touching_heart(
   int checked_height
 );
 
-class MOVE_TWORDS {
+class MOVE_TOWRDS {
   
 
 public:
 
-  // initailizer, runs when class type created
-  MOVE_TWORDS(int x, int y, int heart_x, int heart_y);
   // or can be done in a seperate case
-  void init(int x, int y, int heart_x, int heart_y);
-  MOVE_TWORDS();
+  void start(int x, int y, int heart_x, int heart_y);
 
   // move in determined direction
   void move();

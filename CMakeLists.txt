@@ -6,6 +6,9 @@ enable_testing()
 
 add_executable(name 
 
+src/game/scout.cpp
+src/game/buttons/buttons.cpp
+
 src/attacks/attack_script.cpp
 
 src/attacks/attack.cpp

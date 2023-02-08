@@ -71,8 +71,8 @@ int main(int argc, char ** argv) {
 	unique_ptr<IMAGE> scout_attack_test(new IMAGE(mast->renderer, ASSETPATH "attacks/cleaver.bmp"));
 
 	// buttons
-		// fight buttons
 
+		// fight
 		// unselected
 		unique_ptr<IMAGE> attack_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/fight/fight.bmp"));
 		// selected
@@ -83,6 +83,20 @@ int main(int argc, char ** argv) {
 		unique_ptr<IMAGE> act_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/act.bmp"));
 		// selected
 		unique_ptr<IMAGE> act_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/act/selected_act.bmp"));
+
+		// item
+		// unselected
+		unique_ptr<IMAGE> item_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/item/item.bmp"));
+		// selected
+		unique_ptr<IMAGE> item_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/item/selected_item.bmp"));
+
+		// mercy
+		// unselected
+		unique_ptr<IMAGE> mercy_button(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/mercy/mercy.bmp"));
+		// selected
+		unique_ptr<IMAGE> mercy_button_selected(new IMAGE(mast->renderer, ASSETPATH "interactable/buttons/mercy/selected_mercy.bmp"));
+
+
 
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());

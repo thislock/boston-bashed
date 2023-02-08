@@ -3,7 +3,7 @@
 #include "attack.h"
 
 
-void MOVE_TWORDS::move() {
+void MOVE_TOWRDS::move() {
 
   occor_rate += unfavored_pos;
 
@@ -50,48 +50,7 @@ bool touching_heart(
   return final_num;
 }
 
-MOVE_TWORDS::MOVE_TWORDS(int x, int y, int h_x, int h_y) {
-
-  // see's how far away the heart pos and defined pos is
-  int steps_x = h_x - x;
-  int steps_y = h_y - y;
-
-
-  // checks to see wich direction to go in for x
-  if (steps_x < 0)
-    // the direction the x value will move in
-    x_dir = 1;
-  else
-    x_dir = -1;
-
-  // checks to see wich direction to go in for y
-  if (steps_y < 0)
-    // the direction the x value will move in
-    y_dir = 1;
-  else
-    y_dir = -1;
-
-  // loops through the x to see the number of times it can be added too
-  int steps_needed_x = 0;
-  for (int i = x; i != h_x; i += x_dir) {steps_needed_x++;}
-  
-  // loops through the x to see the number of times it can be added too
-  int steps_needed_y = 0;
-  for (int i = y; i != h_y; i += y_dir) {steps_needed_y++;}
-
-  // determines the favored and unfavored pos
-  if (steps_needed_x < steps_needed_y) {
-    favored_pos = steps_needed_y;
-    type_fav = true;
-    unfavored_pos = favored_pos / steps_needed_x;
-  } else {
-    favored_pos = steps_needed_x;
-    type_fav = false;
-    unfavored_pos = favored_pos / steps_needed_y;
-  }
-}
-
-void MOVE_TWORDS::init(int x, int y, int h_x, int h_y) {
+void MOVE_TOWRDS::start(int x, int y, int h_x, int h_y) {
 
   // see's how far away the heart pos and defined pos is
   int steps_x = h_x - x;

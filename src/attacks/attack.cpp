@@ -10,7 +10,7 @@ using std::unique_ptr;
 makeimg_ test1_texture _makeimg
 makeattack_ test1 _makeattack
 
-unique_ptr<MOVE_TWORDS> test2(new MOVE_TWORDS());
+// unique_ptr<MOVE_TOWRDS> test2(new MOVE_TOWRDS());
 
 DONTREMOVE
 attack_script {
