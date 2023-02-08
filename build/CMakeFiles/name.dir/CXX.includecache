@@ -44,12 +44,6 @@ time.h
 
 /home/loch/vs_code/c++/boston-bashed/src/game/box.h
 
-/home/loch/vs_code/c++/boston-bashed/src/game/buttons/buttons.cpp
-buttons.h
-/home/loch/vs_code/c++/boston-bashed/src/game/buttons/buttons.h
-iostream
--
-
 /home/loch/vs_code/c++/boston-bashed/src/game/buttons/buttons.h
 SDL.h
 -
@@ -63,10 +57,6 @@ SDL.h
 /home/loch/vs_code/c++/boston-bashed/src/game/global_scout_vars.h
 
 /home/loch/vs_code/c++/boston-bashed/src/game/heart.h
-
-/home/loch/vs_code/c++/boston-bashed/src/game/scout.cpp
-scout.h
-/home/loch/vs_code/c++/boston-bashed/src/game/scout.h
 
 /home/loch/vs_code/c++/boston-bashed/src/game/scout.h
 global_scout_vars.h

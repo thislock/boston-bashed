@@ -94,7 +94,7 @@ int main(int argc, char ** argv) {
 	bool enterMenu = false;
 
 	// for when scout dodges your attacks
-  bool scout_dodge = true;
+  bool scout_dodge = false;
 
 	// create sound
 	unique_ptr<SOUND> speaking_sound(new SOUND(SOUNDPATH "test.wav"));
@@ -207,7 +207,7 @@ int main(int argc, char ** argv) {
 		);
 
 		// does what the fn says
-		animate_scout();
+		animate_scout(scout_dodge);
 
 		// sets what scout texture to draw
 		if (scout_dodge) {

@@ -40,6 +40,6 @@ static int dodge_animation_cycle = 0;
 static int dodge_animation_velocity = 4;
 
 // all scout animation events
-void animate_scout();
+void animate_scout(int scout_dodge);
 
 #endif // SCOUT_H

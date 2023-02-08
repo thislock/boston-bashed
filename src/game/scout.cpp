@@ -53,7 +53,7 @@ void render_scout(
 
 }
 
-void animate_scout() {
+void animate_scout(int scout_dodge) {
 
 	if (var_init) {
 		
