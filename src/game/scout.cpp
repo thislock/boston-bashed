@@ -16,7 +16,7 @@ void renderInputedTexture(
 	SDL_RenderCopy(ren, tex, NULL, &dst);
 }
 
-void render_scout(
+void SCOUT::render_scout(
 	// rendering surface
 	SDL_Renderer * renderer,
 	// head texture 
@@ -53,20 +53,8 @@ void render_scout(
 
 }
 
-void animate_scout(int scout_dodge) {
 
-	if (var_init) {
-		
-		head_y = DEFAULT_HEAD_Y;
-		torso_y = DEFAULT_TORSO_Y;
-		legs_y = DEFAULT_LEGS_Y;
-
-		head_x = DEFAULT_HEAD_X;
-		torso_x = DEFAULT_TORSO_X;
-		legs_x = DEFAULT_LEGS_X;
-		
-		var_init = false;
-	}
+void SCOUT::animate_scout() {
 
 	// for dodge animation
 	if (scout_dodge) {

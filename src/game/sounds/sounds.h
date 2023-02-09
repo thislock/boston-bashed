@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include <string>
 #include <iostream>
+#include <time.h>
 
 #define SOUNDPATH "../sounds/"
 

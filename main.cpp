@@ -77,7 +77,11 @@ int main(int argc, char ** argv) {
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());
 	unique_ptr<PLAYER> heart(new PLAYER());
-	
+
+
+	unique_ptr<SCOUT> scout(new SCOUT());
+
+
 	int scout_animation_cycle = 0;
 
 	// attacks
@@ -93,11 +97,9 @@ int main(int argc, char ** argv) {
 	// for when you are in the food menu, or attack menu
 	bool enterMenu = false;
 
-	// for when scout dodges your attacks
-  bool scout_dodge = false;
-
 	// create sound
-	unique_ptr<SOUND> speaking_sound(new SOUND(SOUNDPATH "test.wav"));
+	unique_ptr<SOUND> scout_attack_sound(new SOUND(SOUNDPATH "hit_sound.wav"));
+
 
 	// master loop
   while (!quit) {
@@ -180,8 +182,9 @@ int main(int argc, char ** argv) {
 		if (enterMenu) {
 			switch (button_selected) {
 				case 1:
-					scout_dodge = true;
+					scout->scout_dodge = true;
 					enterMenu = false;
+					scout_attack_sound->playsound();
 					break;
 
 				default:
@@ -207,10 +210,10 @@ int main(int argc, char ** argv) {
 		);
 
 		// does what the fn says
-		animate_scout(scout_dodge);
+		scout->animate_scout();
 
 		// sets what scout texture to draw
-		if (scout_dodge) {
+		if (scout->scout_dodge) {
 			head_state = scout_winking_head->returnTexture();
 		} else {
 			head_state = scout_head->returnTexture();
@@ -219,7 +222,7 @@ int main(int argc, char ** argv) {
 		legs_state = scout_legs->returnTexture();
 
 		// draws the scout piese's
-		render_scout(
+		scout->render_scout(
 			mast->renderer,
 			head_state,
 			torso_state,
