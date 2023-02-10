@@ -1,3 +1,5 @@
+
+
 // things that i only need in main
 // scout animation code
 #include "src/game/scout.h"
@@ -180,6 +182,7 @@ int main(int argc, char ** argv) {
 		}
 
 		if (enterMenu) {
+			scout_turn = false;
 			switch (button_selected) {
 				case 1:
 					scout->scout_dodge = true;
