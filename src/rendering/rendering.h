@@ -41,10 +41,17 @@ public:
   );
 
   void renderScaledTexture(
-    SDL_Renderer *ren, 
+    SDL_Renderer * renderer, 
     int x, int y, 
     int w, int h
   );
+
+  void renderCutTexture(
+    SDL_Renderer *renderer, 
+    int x, int y,
+	  SDL_Rect *clip
+  );
+	
 
   SDL_Texture * returnTexture() {return tex;}
 

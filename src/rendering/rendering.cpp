@@ -7,6 +7,34 @@ using std::cout;
 
 #include "../../include.h"
 
+void cuthelper(
+	SDL_Renderer * renderer, 
+	SDL_Texture * texture,
+	SDL_Rect destintion,
+	SDL_Rect *clip = nullptr
+) {
+	SDL_RenderCopy(renderer, texture, clip, &destintion);
+}
+
+
+void IMAGE::renderCutTexture(
+	SDL_Renderer *renderer, 
+  int x, int y,
+	SDL_Rect *clip = nullptr
+) {
+	SDL_Rect dst;
+	dst.x = x;
+	dst.y = y;
+	if (clip != nullptr){
+		dst.w = clip->w;
+		dst.h = clip->h;
+	} else {
+		SDL_QueryTexture(tex, NULL, NULL, &dst.w, &dst.h);
+	}
+
+	cuthelper(renderer, tex, dst, clip);
+}
+
 
 void IMAGE::renderTexture(SDL_Renderer *ren, int x, int y) {
 	//Setup the destination rectangle to be at the position we want

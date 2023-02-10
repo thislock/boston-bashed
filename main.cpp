@@ -89,7 +89,6 @@ int main(int argc, char ** argv) {
 	// attacks
 	int attack = 1;
 
-	
 	// 1 for fight 2 for act, 3 for item, 4 for mercy
 	int button_selected = 1;
 	// adds delay between selecting buttons for less jank
@@ -231,6 +230,8 @@ int main(int argc, char ** argv) {
 			torso_state,
 			legs_state
 		);
+
+
 
 		// draws the undertale buttons
 		draw_buttons(mast->renderer, button_selected, scout_turn);
