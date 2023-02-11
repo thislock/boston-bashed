@@ -9,6 +9,9 @@
 // for undertale buttons
 #include "src/game/buttons/buttons.h"
 
+// for fonting
+#include "src/font/font.h"
+
 #include "include.h"
 
 #include <SDL.h>
@@ -101,6 +104,11 @@ int main(int argc, char ** argv) {
 	// create sound
 	unique_ptr<SOUND> scout_attack_sound(new SOUND(SOUNDPATH "hit_sound.wav"));
 
+	// font for letters and stuff
+	unique_ptr<FONT> font(new FONT());
+	font->setTexture(mast->renderer, ASSETPATH "font.bmp");
+
+	int test = 0;
 
 	// master loop
   while (!quit) {
@@ -181,6 +189,7 @@ int main(int argc, char ** argv) {
 		}
 
 		if (enterMenu) {
+			test++;
 			scout_turn = false;
 			switch (button_selected) {
 				case 1:
@@ -230,7 +239,8 @@ int main(int argc, char ** argv) {
 			torso_state,
 			legs_state
 		);
-
+		
+		font->letter(mast->renderer, 0, 0, test);
 
 
 		// draws the undertale buttons

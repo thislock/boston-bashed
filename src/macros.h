@@ -8,8 +8,8 @@
 #define BOX_THICCNESS 5
 
 // window dimentions
-const int WIN_WIDTH = 800;
-const int WIN_HEIGHT = 800;
+const int WIN_WIDTH = 700;
+const int WIN_HEIGHT = 700;
 
 // title of the window
 #define TITLE "boston bashed"

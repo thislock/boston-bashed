@@ -10,14 +10,15 @@ class FONT : public IMAGE {
 
 public:
 
-  void render_letter(
+  void letter(
     SDL_Renderer * renderer,
-    char charecter
+    int x, int y,
+    int letter
   );
 
 private:
 
-  SDL_Rect clips[4];
+  int clips[4];
 
 };
 

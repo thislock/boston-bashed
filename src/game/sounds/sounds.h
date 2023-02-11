@@ -33,7 +33,6 @@ public:
   }
 
   void playsound() {
-    cout << wavLength << endl << clock() << endl <<  clock() - wavLength << endl;
     SDL_PauseAudioDevice(deviceId, 0);
     SDL_QueueAudio(deviceId, wavBuffer, wavLength);
   }

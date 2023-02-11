@@ -3,36 +3,52 @@
 #include <iostream>
 
 using std::cout;
+using std::endl;
 
+#include "rendering.h"
 
-#include "../../include.h"
-
-void cuthelper(
+void butFix(
 	SDL_Renderer * renderer, 
-	SDL_Texture * texture,
-	SDL_Rect destintion,
-	SDL_Rect *clip = nullptr
-) {
-	SDL_RenderCopy(renderer, texture, clip, &destintion);
-}
-
-
-void IMAGE::renderCutTexture(
-	SDL_Renderer *renderer, 
+	SDL_Texture * tex,
   int x, int y,
+	int width, int height,
 	SDL_Rect *clip = nullptr
 ) {
+
 	SDL_Rect dst;
 	dst.x = x;
 	dst.y = y;
+
 	if (clip != nullptr){
-		dst.w = clip->w;
-		dst.h = clip->h;
+		dst.w = width;
+		dst.h = height;
 	} else {
 		SDL_QueryTexture(tex, NULL, NULL, &dst.w, &dst.h);
 	}
 
-	cuthelper(renderer, tex, dst, clip);
+	SDL_RenderCopy(renderer, tex, clip, &dst);
+}
+
+
+void IMAGE::renderCutTexture(
+	SDL_Renderer * renderer, 
+  int x, int y,
+	int width, int height,
+	int clippings[4]
+) {
+	
+	clip.x = clippings[0];
+	clip.y = clippings[1];
+	clip.w = clippings[2];
+	clip.h = clippings[3];
+
+	butFix(
+		renderer, 
+		tex, 
+		x, y, 
+		width, height,
+		&clip
+	);
 }
 
 
@@ -46,7 +62,6 @@ void IMAGE::renderTexture(SDL_Renderer *ren, int x, int y) {
 	SDL_QueryTexture(tex, NULL, NULL, &dst.w, &dst.h);
 	SDL_RenderCopy(ren, tex, NULL, &dst);
 }
-
 
 
 void IMAGE::renderScaledTexture(SDL_Renderer *ren, int x, int y, int w, int h){
@@ -74,12 +89,10 @@ IMAGE::IMAGE(SDL_Renderer * renderer, const std::string &file) {
 		//Make sure converting went ok too
 		if (tex == nullptr) {
 			cout << "failed to create texture from surface, unknown cause.\n";
-      EXIT
 		}
 	}
 	else {
 		cout << "failed to load " << filename << ", check filename and try again.\n";
-    EXIT
   }
 }
 
@@ -98,12 +111,10 @@ void IMAGE::setTexture(SDL_Renderer * renderer, const std::string &file) {
 		//Make sure converting went ok too
 		if (tex == nullptr) {
 			cout << "failed to create texture from surface, unknown cause.\n";
-      EXIT
 		}
 	}
 	else {
 		cout << "failed to load " << filename << ", check filename and try again.\n";
-    EXIT
   }
 }
 

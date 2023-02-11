@@ -17,6 +17,9 @@ class IMAGE {
 
   string filename;
 
+  SDL_Rect clip;
+
+
 public:
 
   IMAGE();
@@ -27,13 +30,13 @@ public:
   );
 
   ~IMAGE();
+  SDL_Texture * tex;
   
+
   void setTexture(
     SDL_Renderer * renderer, 
     const std::string &file
   );
-
-  SDL_Texture * tex;
 
   void renderTexture(
     SDL_Renderer *ren, 
@@ -49,7 +52,8 @@ public:
   void renderCutTexture(
     SDL_Renderer *renderer, 
     int x, int y,
-	  SDL_Rect *clip
+    int width, int height,
+    int clippings[4]
   );
 	
 
