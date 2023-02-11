@@ -103,12 +103,18 @@ int main(int argc, char ** argv) {
 
 	// create sound
 	unique_ptr<SOUND> scout_attack_sound(new SOUND(SOUNDPATH "hit_sound.wav"));
+	unique_ptr<SOUND> scout_attack_sound1(new SOUND(SOUNDPATH "test.wav"));
+
+	scout_attack_sound->playsound();
+	scout_attack_sound1->playsound();
 
 	// font for letters and stuff
 	unique_ptr<FONT> font(new FONT());
 	font->setTexture(mast->renderer, ASSETPATH "font.bmp");
 
 	int test = 0;
+
+	
 
 	// master loop
   while (!quit) {

@@ -1,6 +1,7 @@
 #include "../../include.h"
 #include "attack.h"
 #include <memory>
+#include <iostream>
 using std::unique_ptr;
 
 #include "attack_script.h"

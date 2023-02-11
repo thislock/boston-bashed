@@ -146,7 +146,7 @@ void FONT::letter_seq(
   SDL_Renderer * renderer,
   int x, int y,
   int ww, int hh,
-  std::string sent
+  std::string sent = "no text inputed"
 ) {
   
   for (int ii = 0; ii < sent.length(); ii++) {

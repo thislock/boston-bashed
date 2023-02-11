@@ -18,7 +18,7 @@
 
 // for init
 #define init if (attack_init) {
-#define endinit }
+#define endinit attack_init = false;}
 
 // for adding to attack types
 #define RIGHT ->x +=

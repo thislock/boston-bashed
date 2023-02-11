@@ -44,6 +44,7 @@ void BOX::drawBoxText(SDL_Renderer * renderer) {
 			renderer,
 			FONTPATH
 		);
+		Textinit = false;
 	}
 
 	font2->letter_seq(

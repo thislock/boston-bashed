@@ -1,6 +1,6 @@
 
-#ifndef COLLIDE_H
-#define COLLIDE_H
+#ifndef ATTACK_H
+#define ATTACK_H
 
 
 #pragma once
@@ -70,4 +70,4 @@ public:
 
 };
 
-#endif // COLLIDE_H
+#endif // ATTACK_H
