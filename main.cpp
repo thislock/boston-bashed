@@ -204,12 +204,16 @@ int main(int argc, char ** argv) {
 			}
 		}
 
+
 		// clears the buffer for new things to be drawn.
 		SDL_RenderClear(mast->renderer);
 		SDL_RenderClear(cover_window_renderer);
 
-		heart->heartKeyHandler();
+		// draws the box
 		box->drawBox(mast->renderer);
+
+		// draws the text for the box
+		box->drawBoxText(mast->renderer);
 
     // draws the undertale heart if its scouts turn
 		if (scout_turn)
@@ -235,13 +239,10 @@ int main(int argc, char ** argv) {
 		// draws the scout piese's
 		scout->render_scout(
 			mast->renderer,
-			head_state,
+			head_state, 
 			torso_state,
 			legs_state
 		);
-		
-		font->letter(mast->renderer, 0, 0, test);
-
 
 		// draws the undertale buttons
 		draw_buttons(mast->renderer, button_selected, scout_turn);
