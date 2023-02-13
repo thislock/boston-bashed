@@ -37,7 +37,10 @@ void BOX::drawBox(SDL_Renderer * renderer) {
 unique_ptr<FONT> font2(new FONT());
 
 static bool Textinit = true;
-void BOX::drawBoxText(SDL_Renderer * renderer) {
+void BOX::drawBoxText(
+	SDL_Renderer * renderer,
+	bool scout_turn
+) {
 
 	if (Textinit) {
 		font2->setTexture(
@@ -47,18 +50,20 @@ void BOX::drawBoxText(SDL_Renderer * renderer) {
 		Textinit = false;
 	}
 
-	font2->letter_seq(
-		renderer,
-		box_x + 20, box_y + 20,
-		WIN_WIDTH / 70, WIN_HEIGHT / 70,
-		"*you feel your sins"
-	);
+	if (!scout_turn) {
+		font2->letter_seq(
+			renderer,
+			box_x + 20, box_y + 20,
+			WIN_WIDTH / 70, WIN_HEIGHT / 70,
+			"*you feel your sins"
+		);
 
-	font2->letter_seq(
-		renderer,
-		box_x + 20, box_y + 40,
-		WIN_WIDTH / 70, WIN_HEIGHT / 70,
-		" crawling on your back"
-	);
+		font2->letter_seq(
+			renderer,
+			box_x + 20, box_y + 40,
+			WIN_WIDTH / 70, WIN_HEIGHT / 70,
+			" crawling on your back"
+		);
 
+	}
 }

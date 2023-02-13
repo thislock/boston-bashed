@@ -26,7 +26,8 @@ public:
   bool boxText = true;
 
   void drawBoxText(
-    SDL_Renderer * renderer
+    SDL_Renderer * renderer,
+    bool scout_turn
   );
 
   void drawBox(SDL_Renderer * renderer);

@@ -69,10 +69,24 @@ include CMakeFiles/name.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/name.dir/flags.make
 
+CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o: CMakeFiles/name.dir/flags.make
+CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o: ../src/game/sounds/sounds.cpp
+CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o -MF CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o.d -o CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.cpp
+
+CMakeFiles/name.dir/src/game/sounds/sounds.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/name.dir/src/game/sounds/sounds.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.cpp > CMakeFiles/name.dir/src/game/sounds/sounds.cpp.i
+
+CMakeFiles/name.dir/src/game/sounds/sounds.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/name.dir/src/game/sounds/sounds.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.cpp -o CMakeFiles/name.dir/src/game/sounds/sounds.cpp.s
+
 CMakeFiles/name.dir/src/font/font.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/font/font.cpp.o: ../src/font/font.cpp
 CMakeFiles/name.dir/src/font/font.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/name.dir/src/font/font.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/name.dir/src/font/font.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/font/font.cpp.o -MF CMakeFiles/name.dir/src/font/font.cpp.o.d -o CMakeFiles/name.dir/src/font/font.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/font/font.cpp
 
 CMakeFiles/name.dir/src/font/font.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/name.dir/src/font/font.cpp.s: cmake_force
 CMakeFiles/name.dir/src/game/scout.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/game/scout.cpp.o: ../src/game/scout.cpp
 CMakeFiles/name.dir/src/game/scout.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/name.dir/src/game/scout.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/name.dir/src/game/scout.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/game/scout.cpp.o -MF CMakeFiles/name.dir/src/game/scout.cpp.o.d -o CMakeFiles/name.dir/src/game/scout.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/scout.cpp
 
 CMakeFiles/name.dir/src/game/scout.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/name.dir/src/game/scout.cpp.s: cmake_force
 CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o: ../src/game/buttons/buttons.cpp
 CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o -MF CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o.d -o CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/buttons/buttons.cpp
 
 CMakeFiles/name.dir/src/game/buttons/buttons.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/name.dir/src/game/buttons/buttons.cpp.s: cmake_force
 CMakeFiles/name.dir/src/attacks/attack_script.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/attacks/attack_script.cpp.o: ../src/attacks/attack_script.cpp
 CMakeFiles/name.dir/src/attacks/attack_script.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/name.dir/src/attacks/attack_script.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/name.dir/src/attacks/attack_script.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/attacks/attack_script.cpp.o -MF CMakeFiles/name.dir/src/attacks/attack_script.cpp.o.d -o CMakeFiles/name.dir/src/attacks/attack_script.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack_script.cpp
 
 CMakeFiles/name.dir/src/attacks/attack_script.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/name.dir/src/attacks/attack_script.cpp.s: cmake_force
 CMakeFiles/name.dir/src/attacks/attack.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/attacks/attack.cpp.o: ../src/attacks/attack.cpp
 CMakeFiles/name.dir/src/attacks/attack.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/name.dir/src/attacks/attack.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/name.dir/src/attacks/attack.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/attacks/attack.cpp.o -MF CMakeFiles/name.dir/src/attacks/attack.cpp.o.d -o CMakeFiles/name.dir/src/attacks/attack.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.cpp
 
 CMakeFiles/name.dir/src/attacks/attack.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/name.dir/src/attacks/attack.cpp.s: cmake_force
 CMakeFiles/name.dir/src/game/box.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/game/box.cpp.o: ../src/game/box.cpp
 CMakeFiles/name.dir/src/game/box.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/name.dir/src/game/box.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/name.dir/src/game/box.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/game/box.cpp.o -MF CMakeFiles/name.dir/src/game/box.cpp.o.d -o CMakeFiles/name.dir/src/game/box.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/box.cpp
 
 CMakeFiles/name.dir/src/game/box.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/name.dir/src/game/box.cpp.s: cmake_force
 CMakeFiles/name.dir/src/game/heart.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/game/heart.cpp.o: ../src/game/heart.cpp
 CMakeFiles/name.dir/src/game/heart.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/name.dir/src/game/heart.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/name.dir/src/game/heart.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/game/heart.cpp.o -MF CMakeFiles/name.dir/src/game/heart.cpp.o.d -o CMakeFiles/name.dir/src/game/heart.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/heart.cpp
 
 CMakeFiles/name.dir/src/game/heart.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/name.dir/src/game/heart.cpp.s: cmake_force
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: ../src/rendering/rendering.cpp
 CMakeFiles/name.dir/src/rendering/rendering.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/name.dir/src/rendering/rendering.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/name.dir/src/rendering/rendering.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/rendering/rendering.cpp.o -MF CMakeFiles/name.dir/src/rendering/rendering.cpp.o.d -o CMakeFiles/name.dir/src/rendering/rendering.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.cpp
 
 CMakeFiles/name.dir/src/rendering/rendering.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/name.dir/src/rendering/rendering.cpp.s: cmake_force
 CMakeFiles/name.dir/src/starting-ending.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp
 CMakeFiles/name.dir/src/starting-ending.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/name.dir/src/starting-ending.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/name.dir/src/starting-ending.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/src/starting-ending.cpp.o -MF CMakeFiles/name.dir/src/starting-ending.cpp.o.d -o CMakeFiles/name.dir/src/starting-ending.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/starting-ending.cpp
 
 CMakeFiles/name.dir/src/starting-ending.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/name.dir/src/starting-ending.cpp.s: cmake_force
 CMakeFiles/name.dir/main.cpp.o: CMakeFiles/name.dir/flags.make
 CMakeFiles/name.dir/main.cpp.o: ../main.cpp
 CMakeFiles/name.dir/main.cpp.o: CMakeFiles/name.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/name.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/name.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/name.dir/main.cpp.o -MF CMakeFiles/name.dir/main.cpp.o.d -o CMakeFiles/name.dir/main.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/main.cpp
 
 CMakeFiles/name.dir/main.cpp.i: cmake_force
@@ -211,6 +225,7 @@ CMakeFiles/name.dir/main.cpp.s: cmake_force
 
 # Object files for target name
 name_OBJECTS = \
+"CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o" \
 "CMakeFiles/name.dir/src/font/font.cpp.o" \
 "CMakeFiles/name.dir/src/game/scout.cpp.o" \
 "CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o" \
@@ -225,6 +240,7 @@ name_OBJECTS = \
 # External object files for target name
 name_EXTERNAL_OBJECTS =
 
+name: CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o
 name: CMakeFiles/name.dir/src/font/font.cpp.o
 name: CMakeFiles/name.dir/src/game/scout.cpp.o
 name: CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o
@@ -237,7 +253,7 @@ name: CMakeFiles/name.dir/src/starting-ending.cpp.o
 name: CMakeFiles/name.dir/main.cpp.o
 name: CMakeFiles/name.dir/build.make
 name: CMakeFiles/name.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable name"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lochlan/vscode/c++/boston-bashed/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable name"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/name.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

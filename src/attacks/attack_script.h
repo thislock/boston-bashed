@@ -2,16 +2,17 @@
 #ifndef ATTACK_SCRIPT
 #define ATTACK_SCRIPT
 
-// for not removing
-#define DONTREMOVE static bool attack_init = true;
 
+// simpifies and makes the code easier to read
 // for creating an image
 #define makeimg_ unique_ptr<IMAGE> 
 #define _makeimg (new IMAGE());
-
 // for creating an attack type 
 #define makeattack_ unique_ptr<ATTACK> 
 #define _makeattack (new ATTACK());
+
+// for not removing
+#define DONTREMOVE static bool attack_init = true;
 
 // the attacks fn simplified (for lucas)
 #define attack_script void attacks(SDL_Renderer * renderer, int heart_x, int heart_y)

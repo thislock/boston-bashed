@@ -715,6 +715,30 @@ src/game/scout.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/name.dir/build.make CMakeFiles/name.dir/src/game/scout.cpp.s
 .PHONY : src/game/scout.cpp.s
 
+src/game/sounds/sounds.o: src/game/sounds/sounds.cpp.o
+.PHONY : src/game/sounds/sounds.o
+
+# target to build an object file
+src/game/sounds/sounds.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/name.dir/build.make CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o
+.PHONY : src/game/sounds/sounds.cpp.o
+
+src/game/sounds/sounds.i: src/game/sounds/sounds.cpp.i
+.PHONY : src/game/sounds/sounds.i
+
+# target to preprocess a source file
+src/game/sounds/sounds.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/name.dir/build.make CMakeFiles/name.dir/src/game/sounds/sounds.cpp.i
+.PHONY : src/game/sounds/sounds.cpp.i
+
+src/game/sounds/sounds.s: src/game/sounds/sounds.cpp.s
+.PHONY : src/game/sounds/sounds.s
+
+# target to generate assembly for a file
+src/game/sounds/sounds.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/name.dir/build.make CMakeFiles/name.dir/src/game/sounds/sounds.cpp.s
+.PHONY : src/game/sounds/sounds.cpp.s
+
 src/rendering/rendering.o: src/rendering/rendering.cpp.o
 .PHONY : src/rendering/rendering.o
 
@@ -827,6 +851,9 @@ help:
 	@echo "... src/game/scout.o"
 	@echo "... src/game/scout.i"
 	@echo "... src/game/scout.s"
+	@echo "... src/game/sounds/sounds.o"
+	@echo "... src/game/sounds/sounds.i"
+	@echo "... src/game/sounds/sounds.s"
 	@echo "... src/rendering/rendering.o"
 	@echo "... src/rendering/rendering.i"
 	@echo "... src/rendering/rendering.s"

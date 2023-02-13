@@ -6,6 +6,8 @@ enable_testing()
 
 add_executable(name 
 
+src/game/sounds/sounds.cpp
+
 src/font/font.cpp
 
 src/game/scout.cpp

@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/name.dir/src/game/heart.cpp.o.d"
   "CMakeFiles/name.dir/src/game/scout.cpp.o"
   "CMakeFiles/name.dir/src/game/scout.cpp.o.d"
+  "CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o"
+  "CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o.d"
   "CMakeFiles/name.dir/src/rendering/rendering.cpp.o"
   "CMakeFiles/name.dir/src/rendering/rendering.cpp.o.d"
   "CMakeFiles/name.dir/src/starting-ending.cpp.o"

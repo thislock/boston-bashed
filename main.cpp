@@ -14,10 +14,11 @@
 
 #include "include.h"
 
-#include <SDL.h>
+#include <stdlib.h>
 #include <memory>
 #include <iostream>
 #include <string>
+#include <SDL.h>
 
 #include <time.h>
 
@@ -82,48 +83,27 @@ int main(int argc, char ** argv) {
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());
 	unique_ptr<PLAYER> heart(new PLAYER());
+	unique_ptr<BUTTONS> buttons(new BUTTONS());
 
 
 	unique_ptr<SCOUT> scout(new SCOUT());
 
 
-	int scout_animation_cycle = 0;
-
-	// attacks
-	int attack = 1;
-
-	// 1 for fight 2 for act, 3 for item, 4 for mercy
-	int button_selected = 1;
-	// adds delay between selecting buttons for less jank
-	bool button_delay = false;
-	// for when you, or the oppenent is attacking
-	bool scout_turn = false;
-	// for when you are in the food menu, or attack menu
-	bool enterMenu = false;
-
 	// create sound
 	unique_ptr<SOUND> scout_attack_sound(new SOUND(SOUNDPATH "hit_sound.wav"));
-	unique_ptr<SOUND> scout_attack_sound1(new SOUND(SOUNDPATH "test.wav"));
 
-	scout_attack_sound->playsound();
-	scout_attack_sound1->playsound();
+	
+
+	int scout_animation_cycle = 0;
 
 	// font for letters and stuff
 	unique_ptr<FONT> font(new FONT());
 	font->setTexture(mast->renderer, ASSETPATH "font.bmp");
 
-	int test = 0;
-
-	
+	srand(time(NULL));
 
 	// master loop
   while (!quit) {
-
-		// checks if the button selected isnt possible, and returns to other end
-		if (button_selected < 1 && !scout_turn)
-			button_selected = 4;
-		if (button_selected > 4 && !scout_turn)
-			button_selected = 1;
 
 		// repeat until all events are handled
   	for (; SDL_PollEvent(&event);) {
@@ -144,69 +124,62 @@ int main(int argc, char ** argv) {
 				switch (event.type) {
 					case SDL_KEYDOWN:
 						heart->syntax_compressor = true;
-						button_delay = true;
+						buttons->button_delay = true;
 						break;
 					case SDL_KEYUP:
+						
+						// if your pressing z and your on the fight button
+						if (buttons->button_pressed == 1 && event.key.keysym.sym == SDLK_z) {
+							buttons->scout_turn = true;
+							buttons->scout_dodge = true;
+							scout->scout_dodge = true;
+							scout_attack_sound->playsound();
+						}
+
+						// if the z key is up
+						if (event.key.keysym.sym == SDLK_z) {
+							buttons->enterMenu = true;
+						}
+						buttons->button_delay = false;
 						heart->syntax_compressor = false;
-						button_delay = false;
 						break;
 					default:
 						break;
 				}
 
 				// handles keyboard events
-
 				switch (event.key.keysym.sym) {
 					
 					case SDLK_UP:
-						if (scout_turn) {
+						if (buttons->scout_turn) {
 							heart->h_move_up = heart->syntax_compressor;
 						}
 						break;
 					case SDLK_DOWN:
-						if (scout_turn) {
+						if (buttons->scout_turn) {
 							heart->h_move_down = heart->syntax_compressor;
 						}
 						break;
 					case SDLK_RIGHT:
-						if (!scout_turn && !button_delay && !enterMenu) {
-							button_selected++;
-						} else if (scout_turn) {
+						if (!buttons->scout_turn && !buttons->enterMenu && buttons->button_delay) {
+							buttons->button_selected++;
+						} else if (buttons->scout_turn) {
 							heart->h_move_right = heart->syntax_compressor;
 						}
 						break;
 					case SDLK_LEFT:
-					  if (!scout_turn && button_delay && !enterMenu) {
-							button_selected--;
-						} else if (scout_turn) {
+					  if (!buttons->scout_turn && !buttons->enterMenu && buttons->button_delay) {
+							buttons->button_selected--;
+						} else if (buttons->scout_turn) {
 							heart->h_move_left = heart->syntax_compressor;
 						}
 						break;
-					
-					case SDLK_z:
-						enterMenu = true;
-						break;
+				
                                   
 					default:
 						break;
 
 				}
-			}
-		}
-
-		if (enterMenu) {
-			test++;
-			scout_turn = false;
-			switch (button_selected) {
-				case 1:
-					scout->scout_dodge = true;
-					enterMenu = false;
-					scout_attack_sound->playsound();
-					break;
-
-				default:
-					enterMenu = false;
-					break;
 			}
 		}
 
@@ -219,16 +192,41 @@ int main(int argc, char ** argv) {
 		box->drawBox(mast->renderer);
 
 		// draws the text for the box
-		box->drawBoxText(mast->renderer);
+		box->drawBoxText(mast->renderer, buttons->scout_turn);
+
+		// handles the heart's position changes
+		heart->heartKeyHandler();
 
     // draws the undertale heart if its scouts turn
-		if (scout_turn)
+		if (buttons->scout_turn)
 		heart_img->renderScaledTexture(
 			mast->renderer, 
 			heart->heart_x, 
 			heart->heart_y, 
 			HEART_SIZE, HEART_SIZE
 		);
+
+		// handles things like the text after the button is pressed
+		buttons->button_pressed_events(
+			mast->renderer,
+			box->box_x,
+			box->box_y
+		);
+		if (buttons->enterMenu) {
+			
+			if (buttons->button_selected == 1) {
+				buttons->button_pressed = 1;
+				font->letter_seq(
+					mast->renderer,
+					box->box_x + 20,
+					box->box_y + 20,
+					50, 50,
+					"*scout"
+				);
+			}
+
+			buttons->enterMenu = false;
+		}
 
 		// does what the fn says
 		scout->animate_scout();
@@ -251,7 +249,9 @@ int main(int argc, char ** argv) {
 		);
 
 		// draws the undertale buttons
-		draw_buttons(mast->renderer, button_selected, scout_turn);
+		buttons->draw_buttons(
+			mast->renderer
+		);
 
 		// renders all things that can damage the	heart
 		attacks(mast->renderer, heart->heart_x, heart->heart_y);
@@ -278,10 +278,10 @@ int main(int argc, char ** argv) {
 	SDL_DestroyTexture(torso_state);
 	SDL_DestroyTexture(legs_state);
 
+  SDL_Quit();
+
 	SDL_DestroyRenderer(cover_window_renderer);
 	SDL_DestroyWindow(cover_window);
-
-  SDL_Quit();
 
 	return 0;
 }

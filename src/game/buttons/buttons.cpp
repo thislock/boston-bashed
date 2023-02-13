@@ -3,6 +3,47 @@
 
 #include <iostream>
 
+
+// draws and procceses the button text and pressed events
+
+
+void BUTTONS::button_pressed_events(
+  SDL_Renderer * renderer,
+  int box_x, int box_y
+) {
+  // initial button events
+  if (enterMenu) {
+		switch (button_selected) {
+  
+      case 2: 
+        button_pressed = 2;
+        break;
+
+			default:
+				break;
+		}
+	}
+
+  // if its scouts turn, the button pressed is reset
+	if (scout_turn) {
+		button_pressed = 0;
+	}
+
+  // checks if the button selected isnt possible, and returns to other end
+	if (button_selected < 1 && !scout_turn)
+		button_selected = 4;
+	if (button_selected > 4 && !scout_turn)
+		button_selected = 1;
+  
+  // if its scouts turn, go to a button that doesn't exist
+	if (scout_turn)
+		button_selected = 0;
+
+  
+}
+
+
+
 // buttons
 
 // fight
@@ -43,7 +84,7 @@ const int button_height = WIN_HEIGHT / 10;
 // for adding the assetpaths and stuff to the images
 static bool button_init = true;
 
-void draw_buttons(SDL_Renderer * renderer, int selected, bool turn) {
+void BUTTONS::draw_buttons(SDL_Renderer * renderer) {
 
   if (button_init) {
     
@@ -62,7 +103,7 @@ void draw_buttons(SDL_Renderer * renderer, int selected, bool turn) {
     button_init = false;
   }
 
-  if (selected == 1) {
+  if (button_selected == 1) {
     renderInputedTexture(
       renderer,
       attack_button_selceted->tex,
@@ -78,7 +119,7 @@ void draw_buttons(SDL_Renderer * renderer, int selected, bool turn) {
     );
   }
 
-  if (selected == 2) {
+  if (button_selected == 2) {
     renderInputedTexture(
       renderer,
       act_button_selected->tex,
@@ -94,7 +135,7 @@ void draw_buttons(SDL_Renderer * renderer, int selected, bool turn) {
     );
   }
 
-  if (selected == 3) {
+  if (button_selected == 3) {
     renderInputedTexture(
       renderer,
       item_button_selected->tex,
@@ -110,7 +151,7 @@ void draw_buttons(SDL_Renderer * renderer, int selected, bool turn) {
     );
   }
 
-  if (selected == 4) {
+  if (button_selected == 4) {
     renderInputedTexture(
       renderer,
       mercy_button_selected->tex,

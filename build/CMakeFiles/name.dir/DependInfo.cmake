@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/lochlan/vscode/c++/boston-bashed/src/game/buttons/buttons.cpp" "CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o" "gcc" "CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o.d"
   "/home/lochlan/vscode/c++/boston-bashed/src/game/heart.cpp" "CMakeFiles/name.dir/src/game/heart.cpp.o" "gcc" "CMakeFiles/name.dir/src/game/heart.cpp.o.d"
   "/home/lochlan/vscode/c++/boston-bashed/src/game/scout.cpp" "CMakeFiles/name.dir/src/game/scout.cpp.o" "gcc" "CMakeFiles/name.dir/src/game/scout.cpp.o.d"
+  "/home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.cpp" "CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o" "gcc" "CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o.d"
   "/home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.cpp" "CMakeFiles/name.dir/src/rendering/rendering.cpp.o" "gcc" "CMakeFiles/name.dir/src/rendering/rendering.cpp.o.d"
   "/home/lochlan/vscode/c++/boston-bashed/src/starting-ending.cpp" "CMakeFiles/name.dir/src/starting-ending.cpp.o" "gcc" "CMakeFiles/name.dir/src/starting-ending.cpp.o.d"
   )

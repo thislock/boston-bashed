@@ -59,7 +59,6 @@ void SCOUT::animate_scout() {
 	// for dodge animation
 	if (scout_dodge) {
 
-
 		dodge_animation_cycle++;
 
 		// general movment code
