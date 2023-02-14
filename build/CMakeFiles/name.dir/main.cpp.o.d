@@ -307,8 +307,8 @@ CMakeFiles/name.dir/main.cpp.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.h \
+ /home/lochlan/vscode/c++/boston-bashed/src/attacks/../rendering/rendering.h \
  /home/lochlan/vscode/c++/boston-bashed/src/game/buttons/buttons.h \
- /home/lochlan/vscode/c++/boston-bashed/src/game/buttons/../../rendering/rendering.h \
  /home/lochlan/vscode/c++/boston-bashed/src/game/buttons/../../superfile.h \
  /home/lochlan/vscode/c++/boston-bashed/src/font/font.h \
  /home/lochlan/vscode/c++/boston-bashed/include.h \

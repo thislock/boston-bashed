@@ -376,8 +376,8 @@ CMakeFiles/name.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
   ../src/attacks/attack.h \
-  ../src/game/buttons/buttons.h \
   ../src/rendering/rendering.h \
+  ../src/game/buttons/buttons.h \
   ../src/superfile.h \
   ../src/font/font.h \
   ../include.h \
@@ -764,8 +764,7 @@ CMakeFiles/name.dir/src/attacks/attack.cpp.o: ../src/attacks/attack.cpp \
   ../src/font/font.h \
   ../src/game/heart.h \
   ../src/game/sounds/sounds.h \
-  ../src/attacks/attack.h \
-  ../src/attacks/attack_script.h
+  ../src/attacks/attack.h
 
 CMakeFiles/name.dir/src/attacks/attack_script.cpp.o: ../src/attacks/attack_script.cpp \
   /usr/include/stdc-predef.h \
@@ -4349,8 +4348,6 @@ CMakeFiles/name.dir/src/starting-ending.cpp.o: ../src/starting-ending.cpp \
 /usr/include/c++/11/limits:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
-
-../src/attacks/attack_script.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 

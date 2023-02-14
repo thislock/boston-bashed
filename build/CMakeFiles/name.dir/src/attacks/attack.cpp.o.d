@@ -311,5 +311,4 @@ CMakeFiles/name.dir/src/attacks/attack.cpp.o: \
  /home/lochlan/vscode/c++/boston-bashed/src/attacks/../../src/game/../font/font.h \
  /home/lochlan/vscode/c++/boston-bashed/src/attacks/../../src/game/heart.h \
  /home/lochlan/vscode/c++/boston-bashed/src/attacks/../../src/game/sounds/sounds.h \
- /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.h \
- /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack_script.h
+ /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.h

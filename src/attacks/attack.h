@@ -2,8 +2,9 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-
 #pragma once
+
+#include "../rendering/rendering.h"
 
 bool touching_heart(
   int heart_x, 
@@ -50,17 +51,14 @@ private:
 
 };
 
-void attacks(SDL_Renderer * renderer, int heart_x, int heart_y);
-class ATTACK {
-
+void attacks(SDL_Renderer * renderer, int heart_x, int heart_y, int turn_cycle, bool scout_turn);
+class ATTACK : public IMAGE {
 
   bool isTouchingHeart;
 
 public:
 
-  int x, y;
-
-  void setTexture(SDL_Texture * text) {text = tex;}
+  int x = 0, y = 0;
   
   void setPos(int x, int y);
 

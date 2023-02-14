@@ -1,38 +1,17 @@
+// THIS IS NOT TO BE READ, IT IS A COMPILED FILE MADE BY CUSTOM ATTACK SCRIPT LAUNGUAGE
 #include "../../include.h"
 #include "attack.h"
 #include <memory>
 #include <iostream>
-using std::unique_ptr;
-
-#include "attack_script.h"
-
-// attack test init
-// for initilizing the attacks
-makeimg_ test1_texture _makeimg
-makeattack_ test1 _makeattack
-
-// unique_ptr<MOVE_TOWRDS> test2(new MOVE_TOWRDS());
-
-DONTREMOVE
-attack_script {
-
-  init
-    test1_texture setSprite
-      "attacks/cleaver.bmp"
-    endSetSprite
-    test1 GET x = WIN_WIDTH;
-    test1 GET y = WIN_HEIGHT;
-  endinit
-
-  test1->x -= heart_x / 100;
-  test1->y += heart_y / 100;
-  
-
-  if (!touching_heart(heart_x, heart_y, test1->x, test1->y, 60, 60)) {
-    test1_texture DRAW
-      test1->x, test1->y,
-      60, 60
-    END_DRAW
-  }
-
-}
+unique_ptr<ATTACK>test1(new ATTACK());
+static bool attack_init = true;
+void attacks(SDL_Renderer *renderer,int heart_x, int heart_y, int turn_cycle, bool scout_turn) {
+if (attack_init) {
+test1->setTexture(renderer, ASSETPATH " attacks/cleaver.bmp");
+attack_init = false;}
+switch (turn_cycle && scout_turn) {
+case 1:
+  break;
+default:
+  break;
+}}

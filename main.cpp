@@ -254,7 +254,7 @@ int main(int argc, char ** argv) {
 		);
 
 		// renders all things that can damage the	heart
-		attacks(mast->renderer, heart->heart_x, heart->heart_y);
+		attacks(mast->renderer, heart->heart_x, heart->heart_y, 0, buttons->scout_turn);
 
 		// draws over the weird pixel in the corner of the heart for some reason
 		SDL_SetRenderDrawColor(mast->renderer, 0, 0, 0, 255);
