@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/loch/vs_code/c++/boston-bashed/attack_script/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+cstdlib
+-
+

@@ -1,57 +1,57 @@
 [
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/game/sounds/sounds.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/game/sounds/sounds.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/game/sounds/sounds.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/game/sounds/sounds.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/font/font.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/font/font.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/font/font.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/font/font.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/font/font.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/font/font.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/game/scout.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/scout.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/game/scout.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/game/scout.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/game/scout.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/game/scout.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/buttons/buttons.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/game/buttons/buttons.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/game/buttons/buttons.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/game/buttons/buttons.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/game/buttons/buttons.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/attacks/attack_script.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack_script.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/attacks/attack_script.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/attacks/attack_script.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/attacks/attack_script.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/attacks/attack_script.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/attacks/attack.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/attacks/attack.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/attacks/attack.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/attacks/attack.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/attacks/attack.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/game/box.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/box.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/game/box.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/game/box.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/game/box.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/game/box.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/game/heart.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/game/heart.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/game/heart.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/game/heart.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/game/heart.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/game/heart.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/rendering/rendering.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/rendering/rendering.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/rendering/rendering.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/rendering/rendering.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/rendering/rendering.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/src/starting-ending.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/src/starting-ending.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/src/starting-ending.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/src/starting-ending.cpp.o -c /home/loch/vs_code/c++/boston-bashed/src/starting-ending.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/src/starting-ending.cpp"
 },
 {
-  "directory": "/home/lochlan/vscode/c++/boston-bashed/build",
-  "command": "/usr/bin/c++  -I/usr/include/SDL2 -g -o CMakeFiles/name.dir/main.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/main.cpp",
-  "file": "/home/lochlan/vscode/c++/boston-bashed/main.cpp"
+  "directory": "/home/loch/vs_code/c++/boston-bashed/build",
+  "command": "/usr/bin/g++   -I/usr/include/SDL2  -g   -o CMakeFiles/name.dir/main.cpp.o -c /home/loch/vs_code/c++/boston-bashed/main.cpp",
+  "file": "/home/loch/vs_code/c++/boston-bashed/main.cpp"
 }
 ]

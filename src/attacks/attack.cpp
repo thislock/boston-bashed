@@ -4,14 +4,21 @@
 #include <memory>
 #include <iostream>
 unique_ptr<ATTACK>test1(new ATTACK());
+static int test1width =WIN_WIDTH /2;
+static int test1height =WIN_HEIGHT / 2;
 static bool attack_init = true;
 void attacks(SDL_Renderer *renderer,int heart_x, int heart_y, int turn_cycle, bool scout_turn) {
 if (attack_init) {
-test1->setTexture(renderer, ASSETPATH " attacks/cleaver.bmp");
+test1->setTexture(renderer, ASSETPATH"attacks/cleaver.bmp");
+ test1->x =  100;
+ test1->y =  100;
 attack_init = false;}
-switch (turn_cycle && scout_turn) {
+switch (turn_cycle) {
 case 1:
-  break;
+if (scout_turn) {
+ test1->renderScaledTexture(renderer,  test1->x, test1->y, test1width, test1height);
+}
+break;
 default:
   break;
 }}

@@ -1,1 +1,4 @@
 declare_attack test1, attacks/cleaver.bmp
+
+init_x test1, 100
+init_y test1, 100
