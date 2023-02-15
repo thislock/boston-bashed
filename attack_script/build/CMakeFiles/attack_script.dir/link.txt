@@ -1,1 +1,1 @@
-/usr/bin/g++  -g  -rdynamic CMakeFiles/attack_script.dir/main.cpp.o  -o attack_script 
+/usr/bin/g++ -g -rdynamic CMakeFiles/attack_script.dir/main.cpp.o -o attack_script 

@@ -58,8 +58,8 @@ int main() {
     script_images.close();
     
     // adds boilerplate
-    compile << "static int delay=0;\n";
-    compile << "static bool attack_init = true;\n";
+    compile << "static int delay=time(NULL);\n";
+    compile << "static bool attack_init=true;\n";
     compile << "void attacks(SDL_Renderer *renderer,int heart_x, int heart_y, int turn_cycle, bool scout_turn) {\n";
 
     compile << "if (attack_init) {\n";
@@ -129,6 +129,7 @@ int main() {
     ifstream script_attack("../script/attacks");
 
     while (getline(script_attack, line)) {
+
         if (!line.find("attack")) {
             compile << "case ";
             for (int i = 6; line[i]; i++)
@@ -153,16 +154,88 @@ int main() {
             line = "";
         }
         if (!line.find("wait")) {
-            compile << "delay = time(NULL);"
+            compile << "delay = time(NULL);";
             for (int i = 0; line[i + 4]; i++){
                 compile << line[i + 4];
             }
+        }
+        if (!line.find("for_second")) {
+            compile << "if (time(NULL) - delay >";
+            o = 10;
+            for (int i = 10; line[i] != ','; i++) {
+                compile << line[i];
+                o++;
+            }
+            o++;
+            compile << "&& time(NULL) - delay<";
+
+            for (int i = o; line[i]; i++)
+                compile << line[i];
+            
+            compile << "){\n";
+
+            line = "";
+        }
+
+        if (!line.find("move_right")) {
+            o = 11;
+            for (int i = 10; line[i] != ','; i++) {
+                o++;
+                compile << line[i];
+            }
+            compile << "->x +=WIN_WIDTH/";
+            for (int i = o; line[i]; i++)
+                compile << line[i];
+            compile << ";\n";
+            line = "";
+        }
+        
+        if (!line.find("move_left")) {
+            o = 10;
+            for (int i = 9; line[i] != ','; i++) {
+                o++;
+                compile << line[i];
+            }
+            compile << "->x -=WIN_WIDTH/";
+            for (int i = o; line[i]; i++)
+                compile << line[i];
+            compile << ";\n";
+            line = "";
+        }
+
+        if (!line.find("move_up")) {
+            o = 8;
+            for (int i = 7; line[i] != ','; i++) {
+                o++;
+                compile << line[i];
+            }
+            compile << "->y -= WIN_HEIGHT/";
+            for (int i = o; line[i]; i++)
+                compile << line[i];
+            compile << ";\n";
+            line = "";
+        }
+        if (!line.find("move_down")) {
+            o = 10;
+            for (int i = 9; line[i] != ','; i++) {
+                o++;
+                compile << line[i];
+            }
+            compile << "->y += WIN_HEIGHT/";
+            for (int i = o; line[i]; i++)
+                compile << line[i];
+            compile << ";\n";
+        }
+
+        if (!line.find("end")) {
+            compile << "}";
+            line = "";
         }
     }
     
 
     script_attack.close();
-    compile << "default:\n  break;\n}";
+    compile << "default:\ndelay=time(NULL);\nbreak;\n}";
 
     // finishes
     compile << "}";

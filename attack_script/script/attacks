@@ -2,4 +2,11 @@ attack1
 
 draw test1,
 
+for_second 2, 5
+
+move_right test1, 150
+move_down test1, 150
+
+end
+
 end_attack

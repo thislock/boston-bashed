@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/loch/vs_code/c++/boston-bashed/attack_script/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/attack_script.dir/main.cpp.o -c /home/loch/vs_code/c++/boston-bashed/attack_script/main.cpp",
-  "file": "/home/loch/vs_code/c++/boston-bashed/attack_script/main.cpp"
+  "directory": "/home/lochlan/vscode/c++/boston-bashed/attack_script/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/attack_script.dir/main.cpp.o -c /home/lochlan/vscode/c++/boston-bashed/attack_script/main.cpp",
+  "file": "/home/lochlan/vscode/c++/boston-bashed/attack_script/main.cpp"
 }
 ]
