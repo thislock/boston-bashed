@@ -46,8 +46,6 @@ class SCOUT {
 	int dodge_animation_velocity = 2;
 
 public:
-
-	bool scout_dodge = false;
 	
 	void render_scout(
 		// rendering surface
@@ -61,7 +59,7 @@ public:
 	);
 
 	// all scout animation events
-	void animate_scout();
+	void animate_scout(bool & scout_dodge);
 
 };
 

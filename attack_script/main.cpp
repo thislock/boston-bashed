@@ -60,7 +60,7 @@ int main() {
     // adds boilerplate
     compile << "static int delay=time(NULL);\n";
     compile << "static bool attack_init=true;\n";
-    compile << "void attacks(SDL_Renderer *renderer,int heart_x, int heart_y, int turn_cycle, bool scout_turn) {\n";
+    compile << "void attacks(SDL_Renderer *renderer,int heart_x, int heart_y, int turn_cycle, bool & scout_turn) {\n";
 
     compile << "if (attack_init) {\n";
 
@@ -160,14 +160,14 @@ int main() {
             }
         }
         if (!line.find("for_second")) {
-            compile << "if (time(NULL) - delay >";
+            compile << "if (time(NULL) - delay >=";
             o = 10;
             for (int i = 10; line[i] != ','; i++) {
                 compile << line[i];
                 o++;
             }
             o++;
-            compile << "&& time(NULL) - delay<";
+            compile << "&& time(NULL) - delay<=";
 
             for (int i = o; line[i]; i++)
                 compile << line[i];
@@ -225,6 +225,33 @@ int main() {
             for (int i = o; line[i]; i++)
                 compile << line[i];
             compile << ";\n";
+        }
+
+        if (!line.find("touching_heart")) {
+            hand = "";
+            for (int i = 14; line[i]; i++) {
+                hand.push_back(line[i]);
+            }
+            compile << "if (touching_heart(heart_x, heart_y," << 
+                hand << "->x," << hand << "->y," <<
+                hand << "width," << hand << "height)) {\n";
+            line = "";
+        }
+        
+        if (!line.find("not_touching_heart")) {
+            hand = "";
+            for (int i = 18; line[i]; i++) {
+                hand.push_back(line[i]);
+            }
+            compile << "if (!touching_heart(heart_x, heart_y," << 
+                hand << "->x," << hand << "->y," <<
+                hand << "width," << hand << "height)) {\n";
+            line = "";
+        }
+
+        if (!line.find("end_turn")) {
+            compile << "scout_turn = false;\n";
+            line = "";
         }
 
         if (!line.find("end")) {

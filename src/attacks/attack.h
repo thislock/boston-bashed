@@ -51,12 +51,12 @@ private:
 
 };
 
-void attacks(SDL_Renderer * renderer, int heart_x, int heart_y, int turn_cycle, bool scout_turn);
+void attacks(SDL_Renderer * renderer, int heart_x, int heart_y, int turn_cycle, bool & scout_turn);
 class ATTACK : public IMAGE {
 
-  bool isTouchingHeart;
-
 public:
+
+  bool show = true;
 
   int x = 0, y = 0;
   

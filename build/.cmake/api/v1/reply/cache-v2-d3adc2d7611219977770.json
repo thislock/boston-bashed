@@ -83,7 +83,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script/build"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -190,8 +190,8 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "STRING",
-			"value" : "/usr/bin/g++"
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/c++"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -315,11 +315,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
-			"value" : "/usr/bin/gcc"
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-12"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -335,7 +335,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ar-11"
+			"value" : "/usr/bin/gcc-ar-12"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -351,7 +351,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ranlib-11"
+			"value" : "/usr/bin/gcc-ranlib-12"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -867,7 +867,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "attack_script"
+			"value" : "name"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1587,11 +1587,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
+					"value" : "Path to a program."
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/git"
 		},
 		{
 			"name" : "HGCOMMAND",
@@ -1674,6 +1674,18 @@
 			"value" : ""
 		},
 		{
+			"name" : "SDL2_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL2."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/SDL2"
+		},
+		{
 			"name" : "SITE",
 			"properties" : 
 			[
@@ -1706,7 +1718,7 @@
 			"value" : ""
 		},
 		{
-			"name" : "attack_script_BINARY_DIR",
+			"name" : "name_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1715,10 +1727,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script/build"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed/build"
 		},
 		{
-			"name" : "attack_script_IS_TOP_LEVEL",
+			"name" : "name_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1730,7 +1742,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "attack_script_SOURCE_DIR",
+			"name" : "name_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1739,7 +1751,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed"
 		}
 	],
 	"kind" : "cache",

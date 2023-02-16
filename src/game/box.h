@@ -27,7 +27,10 @@ public:
 
   void drawBoxText(
     SDL_Renderer * renderer,
-    bool scout_turn
+    bool scout_turn,
+    bool enterMenu,
+    int button_selected,
+    int & button_pressed
   );
 
   void drawBox(SDL_Renderer * renderer);

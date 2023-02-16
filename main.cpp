@@ -58,7 +58,6 @@ int main(int argc, char ** argv) {
 
 	mast->renderer = SDL_CreateRenderer(mast->window, -1, SDL_RENDERER_ACCELERATED);
 
-
 	// images
 	// heart image
 	unique_ptr<IMAGE> heart_img(new IMAGE(mast->renderer, ASSETPATH "interactable/heart.bmp"));
@@ -75,25 +74,24 @@ int main(int argc, char ** argv) {
 	SDL_Texture * head_state;
 	SDL_Texture * torso_state;
 	SDL_Texture * legs_state;
+	// 0 the is default state
+	// 1 for winking
+	// 2 for both eyes closed
+	// 3 for hands raised
+	int scout_state = 0;
 
 	// test entity system
 	unique_ptr<IMAGE> scout_attack_test(new IMAGE(mast->renderer, ASSETPATH "attacks/cleaver.bmp"));
-
 
 	// gameplay objects
 	unique_ptr<BOX> box(new BOX());
 	unique_ptr<PLAYER> heart(new PLAYER());
 	unique_ptr<BUTTONS> buttons(new BUTTONS());
 
-
 	unique_ptr<SCOUT> scout(new SCOUT());
-
 
 	// create sound
 	unique_ptr<SOUND> scout_attack_sound(new SOUND(SOUNDPATH "hit_sound.wav"));
-
-	
-
 	int scout_animation_cycle = 0;
 
 	// font for letters and stuff
@@ -132,7 +130,7 @@ int main(int argc, char ** argv) {
 						if (buttons->button_pressed == 1 && event.key.keysym.sym == SDLK_z) {
 							buttons->scout_turn = true;
 							buttons->scout_dodge = true;
-							scout->scout_dodge = true;
+							buttons->scout_dodge = true;
 							scout_attack_sound->playsound();
 						}
 
@@ -140,6 +138,11 @@ int main(int argc, char ** argv) {
 						if (event.key.keysym.sym == SDLK_z) {
 							buttons->enterMenu = true;
 						}
+						
+						if (event.key.keysym.sym == SDLK_x) {
+							buttons->enterMenu = false;
+						}
+						
 						buttons->button_delay = false;
 						heart->syntax_compressor = false;
 						break;
@@ -192,7 +195,13 @@ int main(int argc, char ** argv) {
 		box->drawBox(mast->renderer);
 
 		// draws the text for the box
-		box->drawBoxText(mast->renderer, buttons->scout_turn);
+		box->drawBoxText(
+			mast->renderer, 
+			buttons->scout_turn,
+			buttons->enterMenu,
+			buttons->button_selected,
+			buttons->button_pressed
+		);
 
 		// handles the heart's position changes
 		heart->heartKeyHandler();
@@ -212,27 +221,13 @@ int main(int argc, char ** argv) {
 			box->box_x,
 			box->box_y
 		);
-		if (buttons->enterMenu) {
-			
-			if (buttons->button_selected == 1) {
-				buttons->button_pressed = 1;
-				font->letter_seq(
-					mast->renderer,
-					box->box_x + 20,
-					box->box_y + 20,
-					50, 50,
-					"*scout"
-				);
-			}
 
-			buttons->enterMenu = false;
-		}
 
 		// does what the fn says
-		scout->animate_scout();
+		scout->animate_scout(buttons->scout_dodge);
 
 		// sets what scout texture to draw
-		if (scout->scout_dodge) {
+		if (buttons->scout_dodge) {
 			head_state = scout_winking_head->returnTexture();
 		} else {
 			head_state = scout_head->returnTexture();

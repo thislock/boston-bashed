@@ -39,9 +39,12 @@ unique_ptr<FONT> font2(new FONT());
 static bool Textinit = true;
 void BOX::drawBoxText(
 	SDL_Renderer * renderer,
-	bool scout_turn
+	bool scout_turn,
+	bool enterMenu,
+	int button_selected,
+	int & button_pressed
 ) {
-
+	
 	if (Textinit) {
 		font2->setTexture(
 			renderer,
@@ -50,7 +53,18 @@ void BOX::drawBoxText(
 		Textinit = false;
 	}
 
-	if (!scout_turn) {
+	if (enterMenu) {
+		if (button_selected == 1) {
+			button_pressed = 1;
+			font2->letter_seq(
+				renderer,
+				box_x + 20,
+				box_y + 20,
+				WIN_WIDTH / 70, WIN_HEIGHT / 70,
+				"*scout"
+			);
+		}
+	} else if (!scout_turn) {
 		font2->letter_seq(
 			renderer,
 			box_x + 20, box_y + 20,
@@ -66,4 +80,5 @@ void BOX::drawBoxText(
 		);
 
 	}
+
 }

@@ -83,7 +83,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed/build"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -187,11 +187,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/c++"
+			"value" : "/usr/bin/g++"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -315,11 +315,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/cc"
+			"value" : "/usr/bin/gcc"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -867,7 +867,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "name"
+			"value" : "attack_script"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1587,11 +1587,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Path to a program."
+					"value" : "(This variable does not exist and should not be used)"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "/usr/bin/git"
+			"type" : "UNINITIALIZED",
+			"value" : ""
 		},
 		{
 			"name" : "HGCOMMAND",
@@ -1674,18 +1674,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "SDL2_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for SDL2."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/SDL2"
-		},
-		{
 			"name" : "SITE",
 			"properties" : 
 			[
@@ -1718,7 +1706,7 @@
 			"value" : ""
 		},
 		{
-			"name" : "name_BINARY_DIR",
+			"name" : "attack_script_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1727,10 +1715,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed/build"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script/build"
 		},
 		{
-			"name" : "name_IS_TOP_LEVEL",
+			"name" : "attack_script_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1742,7 +1730,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "name_SOURCE_DIR",
+			"name" : "attack_script_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1751,7 +1739,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lochlan/vscode/c++/boston-bashed"
+			"value" : "/home/lochlan/vscode/c++/boston-bashed/attack_script"
 		}
 	],
 	"kind" : "cache",

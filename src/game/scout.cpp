@@ -54,7 +54,7 @@ void SCOUT::render_scout(
 }
 
 
-void SCOUT::animate_scout() {
+void SCOUT::animate_scout(bool & scout_dodge) {
 
 	// for dodge animation
 	if (scout_dodge) {

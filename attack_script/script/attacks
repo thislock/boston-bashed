@@ -1,12 +1,36 @@
 attack1
 
 draw test1,
+draw test2,
+draw test3,
+draw test4,
 
-for_second 2, 5
-
-move_right test1, 150
-move_down test1, 150
-
+for_second 1,1
+move_right test1, 20
 end
+
+for_second 2,2
+move_right test4, 20
+end
+
+for_second 3,3
+move_right test2, 20
+end
+
+for_second 4,4
+end
+
+for_second 5,5
+move_right test3, 20
+end
+
+for_second 6,6
+end_turn
+end
+
+touching_heart test5
+draw test5,
+end
+
 
 end_attack
