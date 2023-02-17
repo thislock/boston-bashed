@@ -17,6 +17,8 @@ int main() {
     compile << "#include \"attack.h\"\n";
     compile << "#include <memory>\n";
     compile << "#include <iostream>\n";
+    compile << "#include <chrono>\n";
+    compile << "using namespace std::chrono;\n";
     
     int o;
     string hand;
@@ -59,8 +61,9 @@ int main() {
     
     // adds boilerplate
     compile << "static int delay=time(NULL);\n";
+    compile << "static int64_t delay_millis = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();";
     compile << "static bool attack_init=true;\n";
-    compile << "void attacks(SDL_Renderer *renderer,int heart_x, int heart_y, int turn_cycle, bool & scout_turn) {\n";
+    compile << "void attacks(SDL_Renderer *renderer,int heart_x, int heart_y, int turn_cycle, bool & scout_turn,int & HEART_HP) {\n";
 
     compile << "if (attack_init) {\n";
 
@@ -144,7 +147,7 @@ int main() {
         }
         if (!line.find("draw")) {
             hand = "";
-            for (int i = 4; line[i] != ','; i++) {
+            for (int i = 4; line[i]; i++) {
                 hand.push_back(line[i]);    
             }
             compile << hand;
@@ -152,12 +155,6 @@ int main() {
                 hand << "->x," << hand << "->y," << 
                 hand << "width," << hand << "height);\n";
             line = "";
-        }
-        if (!line.find("wait")) {
-            compile << "delay = time(NULL);";
-            for (int i = 0; line[i + 4]; i++){
-                compile << line[i + 4];
-            }
         }
         if (!line.find("for_second")) {
             compile << "if (time(NULL) - delay >=";
@@ -173,6 +170,36 @@ int main() {
                 compile << line[i];
             
             compile << "){\n";
+
+            line = "";
+        }
+
+        if (!line.find("for_millisecond")) {
+            compile << "if (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - delay_millis >=";
+            o = 15;
+            for (int i = 15; line[i] != ','; i++) {
+                compile << line[i];
+                o++;
+            }
+            o++;
+            compile << "&& std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - delay_millis<=";
+
+            for (int i = o; line[i]; i++)
+                compile << line[i];
+            
+            compile << "){\n";
+
+            line = "";
+        }
+
+        if (!line.find("damage_heart")) {
+
+            compile << "HEART_HP -=";
+            
+            for (int i = 12; line[i]; i++)
+                compile << line[i];
+            
+            compile << ";\n";
 
             line = "";
         }
@@ -262,10 +289,10 @@ int main() {
     
 
     script_attack.close();
-    compile << "default:\ndelay=time(NULL);\nbreak;\n}";
+    compile << "default:\ndelay=time(NULL); delay_millis=std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count(); \nbreak;\n";
 
     // finishes
-    compile << "}";
+    compile << "}}";
     compile.close();
 
 }

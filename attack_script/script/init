@@ -16,5 +16,5 @@ init_y test3, (WIN_HEIGHT / 2) + WIN_HEIGHT / 6
 init_x test4, 100
 init_y test4, (WIN_HEIGHT / 2) + WIN_HEIGHT / 5
 
-init_x test5, 200
+init_x test5, 100
 init_y test5, (WIN_HEIGHT / 2) + WIN_HEIGHT / 4

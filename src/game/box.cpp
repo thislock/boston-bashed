@@ -1,5 +1,7 @@
 
 #include "box.h"
+#include <string>
+using std::string;
 
 void BOX::drawBox(SDL_Renderer * renderer) {
   // renders the undertale box thing
@@ -35,7 +37,6 @@ void BOX::drawBox(SDL_Renderer * renderer) {
 }
 
 unique_ptr<FONT> font2(new FONT());
-
 static bool Textinit = true;
 void BOX::drawBoxText(
 	SDL_Renderer * renderer,
@@ -54,31 +55,49 @@ void BOX::drawBoxText(
 	}
 
 	if (enterMenu) {
-		if (button_selected == 1) {
-			button_pressed = 1;
-			font2->letter_seq(
-				renderer,
-				box_x + 20,
-				box_y + 20,
-				WIN_WIDTH / 70, WIN_HEIGHT / 70,
-				"*scout"
-			);
+		switch (button_selected) {
+			case 1:
+				button_pressed = 1;
+				font2->letter_seq(
+					renderer,
+					box_x + 20,
+					box_y + 20,
+					WIN_WIDTH / 70, WIN_HEIGHT / 70,
+					"*scout"
+				);
+			break;
+
+			case 2:
+				button_pressed = 2;
+				font2->letter_seq(
+					renderer,
+					box_x + 20,
+					box_y + 20,
+					WIN_WIDTH / 70, WIN_HEIGHT / 70,
+					"*scout"
+				);
+			break;
+
+			default:
+				if (!scout_turn) {
+					font2->letter_seq(
+						renderer,
+						box_x + 20, box_y + 20,
+						WIN_WIDTH / 70, WIN_HEIGHT / 70,
+						"*you feel your sins"
+					);
+					font2->letter_seq(
+						renderer,
+						box_x + 20, box_y + 40,
+						WIN_WIDTH / 70, WIN_HEIGHT / 70,
+						" crawling on your back"
+					);
+				}
+			break;
 		}
-	} else if (!scout_turn) {
-		font2->letter_seq(
-			renderer,
-			box_x + 20, box_y + 20,
-			WIN_WIDTH / 70, WIN_HEIGHT / 70,
-			"*you feel your sins"
-		);
 
-		font2->letter_seq(
-			renderer,
-			box_x + 20, box_y + 40,
-			WIN_WIDTH / 70, WIN_HEIGHT / 70,
-			" crawling on your back"
-		);
-
+			
 	}
+		
 
 }

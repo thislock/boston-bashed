@@ -5,8 +5,6 @@
 
 
 // draws and procceses the button text and pressed events
-
-
 void BUTTONS::button_pressed_events(
   SDL_Renderer * renderer,
   int box_x, int box_y

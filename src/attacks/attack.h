@@ -51,7 +51,14 @@ private:
 
 };
 
-void attacks(SDL_Renderer * renderer, int heart_x, int heart_y, int turn_cycle, bool & scout_turn);
+void attacks(
+  SDL_Renderer * renderer, 
+  int heart_x, int heart_y, 
+  int turn_cycle, 
+  bool & scout_turn,
+  int & heart_heath_points
+);
+
 class ATTACK : public IMAGE {
 
 public:

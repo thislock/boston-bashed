@@ -100,6 +100,9 @@ int main(int argc, char ** argv) {
 
 	srand(time(NULL));
 
+	// keeps track of how many times you have attacked
+	int attack_cycle = 1;
+
 	// master loop
   while (!quit) {
 
@@ -131,6 +134,7 @@ int main(int argc, char ** argv) {
 							buttons->scout_turn = true;
 							buttons->scout_dodge = true;
 							buttons->scout_dodge = true;
+							attack_cycle++;
 							scout_attack_sound->playsound();
 						}
 
@@ -191,6 +195,9 @@ int main(int argc, char ** argv) {
 		SDL_RenderClear(mast->renderer);
 		SDL_RenderClear(cover_window_renderer);
 
+		// health bar
+		heart->health_bar(mast->renderer, quit);
+		
 		// draws the box
 		box->drawBox(mast->renderer);
 
@@ -249,7 +256,14 @@ int main(int argc, char ** argv) {
 		);
 
 		// renders all things that can damage the	heart
-		attacks(mast->renderer, heart->heart_x, heart->heart_y, 1, buttons->scout_turn);
+		attacks(
+			mast->renderer, 
+			heart->heart_x, 
+			heart->heart_y, 
+			attack_cycle,
+			buttons->scout_turn, 
+			heart->HP
+		);
 
 		// draws over the weird pixel in the corner of the heart for some reason
 		SDL_SetRenderDrawColor(mast->renderer, 0, 0, 0, 255);
@@ -266,7 +280,6 @@ int main(int argc, char ** argv) {
 
 		// for the fps
 		SDL_Delay((1000 / 30));
-
 	}
 
 	SDL_DestroyTexture(head_state);
